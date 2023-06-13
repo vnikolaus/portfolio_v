@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+
+:root {
+    --primary-color: rgb(20, 22, 51);
+    --primary-color-darker: rgb(10, 15, 90);
+}
+
+* {
+    box-sizing: border-box;
+    outline: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-color-darker)
+}
+
+.container {
+    font-family: 'Open sans', sans-serif;
+    font-size: 1.3em;
+    line-height: 1.5em;
+    max-width: 760px;
+    margin: 50px auto;
+    background: whitesmoke;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+#h1 {
+    font-family: 'Open sans', sans-serif;
+    font-weight: 600;
+    color: var(--primary-color-darker);
+}
+
+.inputTask {
+    font-size: 1em;
+    height: 40px;
+    padding: 10px;
+    background: whitesmoke;
+    margin-bottom: 10px;
+}
+
+.addTask {
+    border: none;
+    background-color: var(--primary-color-darker);
+    color: white;
+    font-size: 1em;
+    font-weight: 300;
+    height: 30px;
+    cursor: pointer; 
+    margin-top: 5%;
+    margin-left: 20px;
+}
+
+.addTask:hover {
+    background: rgb(49, 51, 167); 
+}
+
+.addTask:active {
+    background: rgb(68, 66, 66);
+}
+
+.tasks {
+    font-family: 'Open sans', sans-serif;
+    font-weight: 450;
+    font-size: 1.2em;
+    background: whitesmoke;
+}
+
+.deleteTask {
+    position: relative;
+    font-family: 'Open sans', sans-serif;
+    font-weight: 400;
+    font-size: 0.5em;
+    color: whitesmoke;
+    background: var(--primary-color-darker);
+    margin-left: 20px;
+    margin-bottom: 5px;
+    bottom: 3px
+}
+
+.deleteTask:hover {
+    background: rgb(49, 51, 167); /
+}
+
+.deleteTask:active {
+    background: rgb(68, 66, 66); 
+}
