@@ -1,0 +1,72 @@
+<%- include('includes/head'); %>
+<%- include('includes/navbar'); %>
+
+<div class="container">
+    <div class="row">
+       <div class="col-lg-2"></div> 
+       <div class="col-lg-8 my-4">
+            <h1 class="text-center">Contact</h1>
+            <p class="text-center lead">Add your contacts :</p>
+
+            <%- include('includes/messages'); %>
+            
+            <% if(!_contact._id) {%>
+              <h4>Add new contact</h4>
+            <%} else {%>
+              <h4>Edit contact</h4>
+            <%}%> 
+
+            <% if(!_contact._id) {%>
+              <form class="form my-3" action="/contact/register" method="post">
+            <%} else {%>
+              <form class="form my-3" action="/contact/edit/<%= _contact._id %>" method="post">
+            <%}%> 
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <div class="form-group">
+                  <label for="name">Full Name</label>
+                  <input value="<%= _contact.name %>" type="text" class="form-control" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="telephone">Telephone</label>
+                    <input value="<%= _contact.telephone %>" type="text" class="form-control" name="telephone">
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input value="<%= _contact.email %>" type="email" class="form-control" name="email">
+                  </div>
+                  <div class="form-group">
+                    <label for="notice">Notice</label>
+                    <textarea class="form-control" name="notice" rows="2" maxlength="120"><%= _contact.notice %></textarea>                    <!-- <input type="text-area" class="form-control" name="message" placeholder="Type message"> -->
+                  </div>
+                  
+                  <% if(!_contact._id) {%>
+                    <button type="submit" class="btn btn-primary my-2">Add Contact</button>
+                  <%} else {%>
+                    <button type="submit" class="btn btn-primary my-2">Edit Contact</button>
+                  <%}%> 
+
+              </form>
+
+            <div class="responsive-table">
+                <table class="table my-4">
+                    <tr>
+                        <td>Full Name</td>
+                        <td>Telephone</td>
+                        <td>Email</td>
+                        <td>Message</td>
+                    </tr>
+                    <tr>
+                      <td><%= _contact.name %></td>
+                      <td><%= _contact.telephone %></td>
+                      <td><%= _contact.email %></td>
+                      <td><%= _contact.notice %></td>
+                    </tr>
+                </table>
+            </div>
+       </div> 
+       <div class="col-lg-2"></div> 
+    </div>
+</div>
+
+
+<%- include('includes/footer'); %>
