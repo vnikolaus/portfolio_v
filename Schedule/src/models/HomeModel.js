@@ -6,7 +6,6 @@ const HomeSchema = new mongoose.Schema({
 });
 
 const HomeModel = mongoose.model('Nikolaus', HomeSchema);
-// const Home_Model = mongoose.model('Home', Home_Schema);
 
 class Home {
 

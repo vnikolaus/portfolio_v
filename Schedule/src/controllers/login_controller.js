@@ -46,7 +46,7 @@ exports.login = async function(req, res) {
         }
 
         req.flash('sucess', 'Logged !');
-        req.session.user = login.user; //captura o id user para verificar a sessao do navegador;
+        req.session.user = login.user;
         req.session.save(function () {
             return res.redirect('/login/index');
         });

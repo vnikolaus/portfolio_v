@@ -1,0 +1,91 @@
+:root {
+    --nk-color:  rgb(248, 246, 246);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:   var(--nk-color);
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: rgb(8, 19, 112);
+}
+
+.custom-select {
+    background-color:   var(--nk-color);
+    font-size: 1.7em;
+    width: 60%;
+    margin-top: 15%;
+    margin-left: 16%;
+    border-radius: 10px;
+    border-style: dashed;
+    border-color: rgb(49, 47, 47);
+    cursor: pointer;
+    color: rgb(8, 19, 112);
+}
+
+.custom-select:hover {
+    background-color: white;
+}
+
+.logo{
+    margin-top: 45px;
+    margin-left: 50%;
+    margin-bottom: 50px;
+    border-radius: 12px;
+    border-style: ridge;
+    border-color: rgb(49, 47, 47);
+    width: 52%;
+}
+
+.form-control-lg {
+    font-weight: bold;
+    font-size: 1.3em;
+    border-radius: 10px;
+    border-style: dashed;
+    border-color: rgb(49, 47, 47);
+}
+
+.form-control-md {
+    font-weight: bold;
+    font-size: 1.5em;
+    width: 160%;
+    border-radius: 10px;
+    border-style: dashed;
+    border-color: rgb(49, 47, 47);
+}
+
+.label {
+    margin-left: 50%;
+    padding-left: 10px;
+    width: 55%;
+    font-weight: bold;
+    font-size: 1em;
+    color: rgb(8, 19, 112);
+}
+
+.select-graphic {
+    background-color:   var(--nk-color);
+    border-radius: 5px;
+    width: 8%;
+    cursor: pointer;
+    font-size: large;
+}
+
+.select-graphic:hover {
+    background-color: white;
+}
+
+#up-fields {
+    margin-top: 40px;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+#myChart {
+    margin-left: 25%;
+}
+

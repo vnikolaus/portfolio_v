@@ -1,7 +1,7 @@
 const Contact = require("../models/ContactModel");
 
 exports.index = (req, res) => {
-    res.render('contact', { _contact: {} }); // passa um objeto vazio para qnd o html puxar o 'value' trazer vazio
+    res.render('contact', { _contact: {} });
     return;
 }
 

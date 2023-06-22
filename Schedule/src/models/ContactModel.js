@@ -6,7 +6,7 @@ const ContactSchema = new mongoose.Schema({
     telephone: { type: String, required: false, default: '' },
     email: { type: String, required: false, default: ''  },
     notice: { type: String, required: false, default: ''  },
-    creation_date: { type: Date, default: Date.now } //regitra o horario em que foi criado
+    creation_date: { type: Date, default: Date.now } 
 });
 
 const ContactModel = mongoose.model('Contact', ContactSchema);
@@ -20,12 +20,12 @@ class Contact {
 
     async insert() { 
         this.valid_fields();
-        if (this.errors.length > 0) return; //checa primeiro se tem erros de validação dos campos
+        if (this.errors.length > 0) return; 
 
         await this.email_exists();
-        if (this.errors.length > 0) return; // checa novamente se tem o erro de usuario já existente
+        if (this.errors.length > 0) return; 
 
-        this.contact = await ContactModel.create(this.body);//insere contato no banco de dados
+        this.contact = await ContactModel.create(this.body);
     }
 
     async edit(id) {
@@ -38,7 +38,7 @@ class Contact {
     }
 
     async email_exists() {
-        const _contact = await ContactModel.findOne({ email: this.body.email }); //checa se tem algum registro no banco com o mesmo email antes de cadastrar
+        const _contact = await ContactModel.findOne({ email: this.body.email });
         if (_contact) this.errors.push('E-mail already registered.');
     }
 
@@ -56,7 +56,7 @@ class Contact {
 
     static async delete(id) {
         if (typeof id !== 'string') return;
-        id = id.trim(); //importante trimar o id para impossibiltar bugs por causa de espaço na string
+        id = id.trim();
         const contact = await ContactModel.findOneAndDelete({ _id: id });
         return contact;
     }
@@ -72,7 +72,7 @@ class Contact {
             this.errors.push('Please inform e-mail or phone at least.');
         }
 
-        if (this.body.email && !validator.isEmail(this.body.email)) { // checa se é um email valido;
+        if (this.body.email && !validator.isEmail(this.body.email)) { 
             this.errors.push('Invalid e-mail.');
         }
     }
@@ -84,7 +84,7 @@ class Contact {
             }
         }
 
-        this.body = { // seta os campos necessarios para o objeto (removendo o csrf tokens);
+        this.body = { 
             name: this.body.name,
             telephone: this.body.telephone,
             email: this.body.email,

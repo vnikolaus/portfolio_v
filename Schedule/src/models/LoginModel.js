@@ -1,14 +1,13 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
-const bcrypt = require('bcryptjs'); //encrypt / decrypt de senhas
+const bcrypt = require('bcryptjs'); 
 
 const LoginSchema = new mongoose.Schema({
     email: { type: String, required: false },
     password: { type: String, required: false }
 });
 
-const LoginModel = mongoose.model('Login', LoginSchema); //instancia que insere o dado no banco de dados  (LoginModel.create();)
-// const Login_Model = mongoose.model('Login', Login_Schema);
+const LoginModel = mongoose.model('Login', LoginSchema);
 
 class Login {
     constructor(body) {
@@ -22,12 +21,12 @@ class Login {
         if (this.errors.length > 0) return;
 
         this.user = await LoginModel.findOne({ email: this.body.email });
-        if (!this.user) { //checa se o usuario existe, (negando)
+        if (!this.user) { 
             this.errors.push('User not exists.');
             return;
         }
 
-        if (!bcrypt.compareSync(this.body.password, this.user.password)) { //compara o hash da senha informada, com o hash do banco de dados;
+        if (!bcrypt.compareSync(this.body.password, this.user.password)) { 
             this.errors.push('Invalid Password.');
             this.user = null;
             return;
@@ -36,20 +35,20 @@ class Login {
 
     async insert() { 
         this.valid_fields();
-        if (this.errors.length > 0) return; //checa primeiro se tem erros de validação dos campos
+        if (this.errors.length > 0) return; 
 
         await this.email_exists();
-        if (this.errors.length > 0) return; // checa novamente se tem o erro de usuario já existente
+        if (this.errors.length > 0) return; 
 
         const salt = bcrypt.genSaltSync();
         this.body.password = bcrypt.hashSync(this.body.password, salt);
 
-        this.user = await LoginModel.create(this.body);//insere usuario no banco de dados
+        this.user = await LoginModel.create(this.body);
     }
 
     async email_exists() {
         try {
-            const user = await LoginModel.findOne({ email: this.body.email }); //checa se tem algum registro no banco com o mesmo email antes de cadastrar
+            const user = await LoginModel.findOne({ email: this.body.email }); 
             if (user) this.errors.push('E-mail already registered.');
             } 
         catch (e) {
@@ -60,7 +59,7 @@ class Login {
     valid_fields() {
         this.format_string();
 
-        if (!validator.isEmail(this.body.email)) { // checa se é um email valido;
+        if (!validator.isEmail(this.body.email)) { 
             this.errors.push('Invalid email.');
         }
 
@@ -76,7 +75,7 @@ class Login {
             }
         }
 
-        this.body = { // seta os campos necessarios para o objeto (removendo o csrf tokens);
+        this.body = {
             email: this.body.email,
             password: this.body.password
         };
