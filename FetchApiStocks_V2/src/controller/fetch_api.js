@@ -6,7 +6,7 @@ class FetchAPI {
             const api_url = `${process.env.API_URL_STOCKS_1}${symbol}${process.env.API_URL_STOCKS_2}`;
             const data = await fetch(api_url);
             const dataObj = await data.json().then(res => res.results[process.env.STOCK].historicalDataPrice);
-            if (!dataObj) throw new Error("Dados da API Preço não encontrados");
+            if (!dataObj) throw new Error("Data API price not found");
 
             return dataObj;
         } catch (err) {
@@ -20,7 +20,7 @@ class FetchAPI {
             const api_url = `${process.env.API_URL_INDICATOR}${symbol}`;
             const data = await fetch(api_url);
             const dataObj = await data.json().then(res => res.indicators[process.env.STOCK]);
-            if (!dataObj) throw new Error("Dados da API Indicadores não encontrados");
+            if (!dataObj) throw new Error("Data API indicators not found");
 
             return dataObj;
         } catch (err) {
@@ -34,7 +34,7 @@ class FetchAPI {
             const api_url = `${process.env.API_URL_DIVIDENDS}${symbol}`;
             const data = await fetch(api_url);
             const dataObj = await data.json().then(res => res);
-            if (!dataObj) throw new Error("Dados da API Dividendos não encontrados");
+            if (!dataObj) throw new Error("Data API dividends not found");
 
             return dataObj;
         } catch (err) {

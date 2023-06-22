@@ -4,7 +4,7 @@ import FormatData from "./format_data";
 class DTO {
 
     async data(symbol) {
-        if (!symbol) throw new Error('Ação não encontrada.');
+        if (!symbol) throw new Error('Stock not found');
         try {
             const promises = [ 
                 FetchAPI.fetchHistoricalPrice(symbol),
@@ -13,7 +13,7 @@ class DTO {
             ];
     
             const promisesData = await Promise.all(promises);
-            if (!promisesData) throw new Error('Dados pós fetch não encontrados.');
+            if (!promisesData) throw new Error('Data after fetch not found');
             
             const _DTO = this.newDTO(promisesData);
             return _DTO;

@@ -10,7 +10,7 @@ class Graphics {
     }
 
     price_graphic(arr, symbol) {
-        if (!arr) return "Array não encontrado - price_gr";
+        if (!arr) return "Array not found - price_gr";
 
         try {
           const date = arr[process.env.STOCK][process.env.DATE];
@@ -58,7 +58,7 @@ class Graphics {
       }
 
       dividend_graphic(arr, symbol) {
-        if (!arr) return "Array não encontrado - dividend_gr";
+        if (!arr) return "Array not found - dividend_gr";
 
         try {
           const dividendsPerYear = FormatData.formatArrayDividends(arr[process.env.DIVIDENDS], symbol);
