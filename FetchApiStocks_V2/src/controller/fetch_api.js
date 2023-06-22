@@ -44,7 +44,7 @@ class FetchAPI {
 
     static async fetchQuotation(symbol) {
         try {
-            if (!symbol) throw new Error("Ação não encontrada.");
+            if (!symbol) throw new Error("Stock not found.");
             const api_url = `${[process.env.API_URL_QUOTATION]}${symbol}`;
             const response = await fetch(api_url);
             const data = await response.json();
