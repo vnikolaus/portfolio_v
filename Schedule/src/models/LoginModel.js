@@ -70,6 +70,7 @@ class Login {
 
     format_string() {
         for (let i in this.body) {
+            console.log(this.body);
             if (typeof this.body[i] !== 'string') {
                 this.body[i] = '';
             }

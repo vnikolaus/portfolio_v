@@ -21,7 +21,5 @@ export default class Login {
         const email_input = el.querySelector('input[name="email"]');
 
         alert("test");
-        console.log(pwd_input);
-        console.log(email_input);
     }
 }
