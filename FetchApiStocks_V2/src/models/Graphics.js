@@ -106,9 +106,6 @@ class Graphics {
 
       async ibovespa_graphic(symbol) {
         try {
-          // const api_url = [process.env.API_URL_IBOV];
-          // const response = await fetch(api_url);
-          // const data = await response.json();
           const data = await FetchAPI.fetchDataIBOV();
           const dataVO = FormatData.formatArrayIBOV(data);
           if (!dataVO) throw new Error('Data not found to create graphic.')
@@ -139,8 +136,8 @@ class Graphics {
                     _Price[51], _Price[52], _Price[53], _Price[54], _Price[55],_Price[56], _Price[57], _Price[58], _Price[59], _Price[60],
                     _Price[61], _Price[62], _Price[63], _Price[64], _Price[65],_Price[66], _Price[67], _Price[68], _Price[69], _Price[70]
                   ],
-                  borderWidth: 2,
-                  pointBorderColor: 'white',
+                  borderWidth: 3,
+                  pointBorderColor: 'black',
                   borderColor: '#0E9F9F',
                   backgroundColor: '#0FB9B9',
                   fill: true,

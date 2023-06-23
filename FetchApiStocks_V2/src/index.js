@@ -5,12 +5,12 @@ import Quotation from './models/Quotation';
 import Graphics from './models/Graphics';
 import Indicators from './models/Indicators';
 
+const selectStock = document.querySelector('.custom-select');
+const selectGraphic = document.querySelector('.select-graphic');
+
 const _DTO = new DTO();
 const _GRAPHICS = new Graphics();
 const _INDICATORS = new Indicators();
-
-const selectStock = document.querySelector('.custom-select');
-const selectGraphic = document.querySelector('.select-graphic');
 
 selectStock.addEventListener('change', async e => {
     const symbol = e.target.value;
@@ -30,9 +30,10 @@ selectStock.addEventListener('change', async e => {
         if (chartStatus != undefined) chartStatus.destroy();
 
         for (let i of fields) {
-            i.value = '';
+            i.value = '--';
         }
 
+        selectGraphic.value = 'price';
         await changeLogo(symbol);
         await Quotation.quotation(symbol);
         await _GRAPHICS.ibovespa_graphic(symbol);

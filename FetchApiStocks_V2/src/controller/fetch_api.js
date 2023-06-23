@@ -44,7 +44,7 @@ class FetchAPI {
 
     static async fetchQuotation(symbol) {
         try {
-            if (!symbol) throw new Error("Stock not found.");
+            if (!symbol) throw new Error("Stock not found");
             const api_url = `${[process.env.API_URL_QUOTATION]}${symbol}`;
             const response = await fetch(api_url);
             const data = await response.json();
@@ -59,12 +59,11 @@ class FetchAPI {
     static async fetchDataIBOV() {
         try {
             const api_url = [process.env.API_URL_IBOV];
-            console.log(api_url);
             const response = await fetch(api_url);
             const data = await response.json();
             if (data.historicals.length <= 0) throw new Error('Data not found');
 
-            // return data;
+            return data;
         } catch (err) {
             console.log(err);
         }
