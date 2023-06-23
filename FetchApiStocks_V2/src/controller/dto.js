@@ -27,6 +27,11 @@ class DTO {
         const stocks = arr[process.env.STOCK];
         const indicators = arr[process.env.INDICATORS];
         const dividends = arr[process.env.DIVIDENDS];
+        const checkNull = stocks.findIndex((n) => n.close === null);
+
+        if (checkNull !== -1) {
+            stocks[checkNull] = stocks[checkNull -1];
+        }
 
         for (let i in stocks) {
             _DTO[process.env.HISTORICAL][process.env.DATE].push(FormatData.formatTimeStamp(stocks[i].date));
