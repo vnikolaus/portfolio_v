@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(express.static(path.resolve(__dirname, 'public'))) 
 
 const session_options = session({ 
-    secret: 'Nikolauzzzz',
+    secret: 'UYTEF1$@$NMCV54G8FH',
     store: MongoStore.create({ mongoUrl: conn_string }),
     resave: false,
     saveUninitialized: false,
