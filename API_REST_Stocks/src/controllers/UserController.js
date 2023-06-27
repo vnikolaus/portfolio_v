@@ -12,7 +12,7 @@ class UserController {
 
   async index(req, res) {
     try {
-      const users = await User.findAll({ attributes: ['name'] }); // retorna somente o id, nome e email dos usuarios
+      const users = await User.findAll({ attributes: ['name'] });
       return res.json(users);
     } catch (err) {
       return res.status(400).json({ errors: err.message });

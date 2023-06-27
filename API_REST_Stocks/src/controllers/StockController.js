@@ -5,7 +5,7 @@ class StockController {
   async list(req, res) {
     try {
       const stocks = await Stock.findAll({
-        attributes: ['symbol', 'name', 'price', 'variation', 'updatedAt'], // retorna somente o id, nome e email dos usuarios
+        attributes: ['symbol', 'name', 'price', 'variation', 'updatedAt'],
         order: [['id', 'ASC']],
         include: {
           model: Image,

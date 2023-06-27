@@ -28,7 +28,7 @@ export default class Image extends Model {
         url: {
           type: Sequelize.VIRTUAL,
           get() {
-            return `${appConfig.url}/img/${this.getDataValue('filename')}`; // 'getDataValue -> captura os dados dos campos no objeto;
+            return `${appConfig.url}/img/${this.getDataValue('filename')}`;
           },
         },
       },
@@ -40,6 +40,6 @@ export default class Image extends Model {
   }
 
   static associate(model) {
-    this.belongsTo(model.Stock, { foreignKey: 'id_stock' }); // 'belongsTo' -> esse model pertence ao model "Stock", pela sua FK 'stock_id';
+    this.belongsTo(model.Stock, { foreignKey: 'id_stock' });
   }
 }

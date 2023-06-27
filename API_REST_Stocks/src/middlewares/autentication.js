@@ -9,10 +9,10 @@ export default async (req, res, next) => {
   const [, token] = token_key.split(' ');
 
   try {
-    const data = jwt.verify(token, process.env.TOKEN_SECRET); // verifica o token do usuario
+    const data = jwt.verify(token, process.env.TOKEN_SECRET);
     const { id, email } = data;
 
-    const user = await User.findOne({ // retorna um registro do BD
+    const user = await User.findOne({
       where: {
         id,
         email,
@@ -20,7 +20,7 @@ export default async (req, res, next) => {
     });
 
     if (!user) return res.status(401).json({ erros: 'Invalid user' });
-    req.userId = id; // captura o id e email e vincula diretamente na requisição
+    req.userId = id;
     req.userEmail = email;
     return next();
   } catch (err) {

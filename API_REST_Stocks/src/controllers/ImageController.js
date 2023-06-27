@@ -16,7 +16,7 @@ class ImageController {
       }
 
       try {
-        const { originalname, filename } = req.file; // req -> informações enviada pela url de requisição;
+        const { originalname, filename } = req.file;
         const { stock_id } = req.body;
         const id_stock = stock_id;
         const stock = await Stock.findByPk(id_stock);

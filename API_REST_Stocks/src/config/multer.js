@@ -1,7 +1,7 @@
 import multer from 'multer';
 import { extname, resolve } from 'path';
 
-const rand = () => Math.floor(Math.random() * 10000 + 10000); // retorna num aleatorio em 1k - 2k
+const rand = () => Math.floor(Math.random() * 10000 + 10000);
 
 export default {
   fileFilter: (req, file, cb) => {
@@ -16,7 +16,7 @@ export default {
       cb(null, resolve(__dirname, '..', '..', 'uploads', 'img'));
     },
     filename: (req, file, cb) => {
-      cb(null, `${Date.now()}_${rand()}${extname(file.originalname)}`); // muda o nome da imagem para a data atual + extensão do arquivo (extname);
+      cb(null, `${Date.now()}_${rand()}${extname(file.originalname)}`);
     },
   }),
 };

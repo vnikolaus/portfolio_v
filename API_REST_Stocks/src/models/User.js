@@ -42,15 +42,15 @@ export default class User extends Model {
       sequelize,
     });
 
-    this.addHook('beforeSave', async (user) => { // adiciona um 'hook' antes de salvar o usuario;
+    this.addHook('beforeSave', async (user) => {
       if (user.password) {
-        user.password_hash = await bcryptjs.hash(user.password, 6); // gera o hash da senha do usuario;
+        user.password_hash = await bcryptjs.hash(user.password, 6);
       }
     });
     return this;
   }
 
   validPassword(password) {
-    return bcryptjs.compare(password, this.password_hash); // compara a senha do usuario com o hash gerado, para confirmar a autenticação;
+    return bcryptjs.compare(password, this.password_hash);
   }
 }
