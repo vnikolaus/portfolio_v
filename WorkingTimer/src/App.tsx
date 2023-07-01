@@ -1,10 +1,10 @@
 import React from 'react';
-import { PomodoroTimer } from './components/pomodoro_timer';
+import { WorkingTimer } from './components/working_timer';
 
 function App() {
   return (
     <div className="app">
-      <PomodoroTimer
+      <WorkingTimer
         workingTimer={1500}
         shortRestTime={300}
         longRestTime={900}
