@@ -49,8 +49,12 @@ main {
 	color: #dee5e5;
 	font-size: 18px;
 	font-weight: 500;
-	/* border-bottom: 2px solid #fff; */
 	text-transform: uppercase;
+  transition: all 200ms ease-in-out;
+}
+
+.app header button:hover {
+  transform: scale(1.2) translate(-1rem) translateY(0.2rem);
 }
 
 .item {
@@ -69,19 +73,19 @@ main {
 }
 
 .item input[type="checkbox"] {
-	-webkit-appearance: none; 
+	-webkit-appearance: none;
 	background-color: #ffffff;
 	width: 20px;
 	height: 20px;
 	border-radius: 5px;
 	cursor: pointer;
 	margin-right: 1.5rem;
+  transition: all 200ms ease-in-out;
 }
 
 .item input[type="checkbox"]:checked {
-	-webkit-transform: rotate(45deg); 
-	-ms-transform: rotate(45deg); 
-	/* border-radius: 10px; */
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
 	background-color: #00FFAA;
 }
 
