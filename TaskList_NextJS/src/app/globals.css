@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,700;1,900&display=swap');
+
+:root {
+  --color-1: #0d1b2a;
+  --color-2: #1b263b;
+  --color-3: #415a77;
+  --color-4: #778da9;
+  --color-5: #e0e1dd;
+  --black: #000000;
+  --white: #FFFFFF;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 1.6rem;
+  background: var(--color-1);
+}
+
+button {
+  cursor: pointer;
+}

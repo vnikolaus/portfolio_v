@@ -1,0 +1,14 @@
+.main {
+    background: var(--color-5);
+    padding: 3rem;
+    margin: 5rem auto;
+    max-width: 80rem;
+    border-radius: 1.6rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.main h1 {
+    font-size: 3.6rem;
+    text-align: center;
+    color: var(--color-1)
+}

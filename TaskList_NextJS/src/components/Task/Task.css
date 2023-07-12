@@ -1,0 +1,47 @@
+.tasks {
+    margin-top: 4rem;
+}
+
+.tasks li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    font-size: 2.4rem;
+    transition: all 400ms ease-in-out;
+    word-break: break-word;
+    padding-right: 1rem;
+}
+
+.tasks li:hover{
+    background: var(--color-2);
+    color: var(--color-5);
+}
+
+.tasks li .edit {
+    margin-right: 1.5rem;
+    font-size: 2.2rem;
+    color: darkblue
+}
+
+.tasks li .remove {
+    margin-right: 1.5rem;
+    font-size: 2.2rem;
+    color: darkred
+}
+
+.tasks li .remove,
+.tasks li .edit {
+    cursor: pointer;
+}
+
+.tasks li span {
+    display: flex;
+    align-items: center;
+}
+
+.tasks li:hover .edit,
+.tasks li:hover .remove{
+    color: var(--white);
+    transition: all 300ms ease-in-out;
+}
