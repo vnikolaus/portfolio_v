@@ -4,7 +4,7 @@ import { EventProps, StateProps } from './MainInterfaces';
 import Form from '../Form/Form';
 import Task from '../Task/Task';
 
-export default class Main extends Component { // extends 'Component' para possibilitar o uso do state, setState ... 
+export default class Main extends Component { 
     public state: StateProps = {
         newTask: '',
         tasks: [],
@@ -19,7 +19,7 @@ export default class Main extends Component { // extends 'Component' para possib
         })
     }
 
-    handleSubmit = (e: FormEvent<HTMLFormElement>): void => { // 'FormEvent<HTMLFormElement>' -> tipagem do event listener 
+    handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
         e.preventDefault()
         
         const { tasks, index } = this.state
@@ -48,7 +48,7 @@ export default class Main extends Component { // extends 'Component' para possib
         }
     }
 
-    handleEdit(e: React.MouseEvent<SVGElement, MouseEvent>, index: number): void { //'React.MouseEvent<SVGElement' -> tipagem do event de event do react
+    handleEdit(e: React.MouseEvent<SVGElement, MouseEvent>, index: number): void { 
         const { tasks } = this.state
         
         this.setState({
@@ -67,7 +67,7 @@ export default class Main extends Component { // extends 'Component' para possib
         })
     }
 
-    componentDidMount(): void { // quando o componente for montado
+    componentDidMount(): void { 
         this.inputReference.current?.focus()
         
         const tasks = localStorage.getItem('my_tasks') as string
@@ -80,7 +80,7 @@ export default class Main extends Component { // extends 'Component' para possib
         })
     }
     
-    componentDidUpdate(prevState: StateProps): void { // quando o componente for atualizado
+    componentDidUpdate(prevState: StateProps): void {
         this.inputReference.current?.focus()
 
         const { tasks } = this.state
