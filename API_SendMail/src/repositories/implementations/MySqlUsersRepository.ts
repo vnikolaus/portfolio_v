@@ -2,6 +2,7 @@ import { User } from "../../entities/User";
 import { IUsersRepository } from "../IUsersRepository";
 import { conn } from "../../database/connection";
 import { IMySqlProps } from "./IMySqlProps";
+import { SHA1 } from "crypto-js";
 
 export class MySqlUsersRepository implements IUsersRepository {
     async findByEmail(email: string): Promise<IMySqlProps> {
@@ -15,14 +16,14 @@ export class MySqlUsersRepository implements IUsersRepository {
             user.id,
             user.name,
             user.email,
-            user.password
+            SHA1(user.password).toString()
         ])
 
         return this.findByEmail(user.email)
     }
 
     async listUsers(): Promise<IMySqlProps> {
-        const [ data ] = await conn.query(`SELECT * FROM users`)
+        const [ data ] = await conn.query(`SELECT name, email, created_at FROM users`)
         return data
     }
 }

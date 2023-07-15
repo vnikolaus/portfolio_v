@@ -14,6 +14,7 @@ export class CreateUser {
         const user = new User(data)
 
         const userData = await this.usersRepository.save(user)
+
         await this.mailService.sendMail({
             to: { name: data.name, email: data.email },
             from: { name: 'Team App', email: 'teamapp@app.net' },

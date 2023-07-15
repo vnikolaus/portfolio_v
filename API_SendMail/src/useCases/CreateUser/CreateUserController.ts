@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { CreateUser } from "./CreateUser";
-import { MySqlUsersRepository } from "../../repositories/implementations/MySqlUsersRepository";
+import { mySqlUsersRepository } from "./main";
 
 export class CreateUserController {
     constructor(private createUser: CreateUser) {}
@@ -10,6 +10,8 @@ export class CreateUserController {
 
         try {
             const newUser = await this.createUser.exec({ name, email, password })
+            
+            if(!newUser) throw new Error('New user not found')
 
             return res.status(201).send({ user: newUser })
         } catch(err) {
@@ -19,9 +21,8 @@ export class CreateUserController {
         }
     }
 
-    async show(req, res): Promise<Response> {
+    async show(req: Request, res: Response): Promise<Response> {
         try {
-            const mySqlUsersRepository = new MySqlUsersRepository()
             const users = await mySqlUsersRepository.listUsers()
 
             if(!users) throw new Error('Users not found')

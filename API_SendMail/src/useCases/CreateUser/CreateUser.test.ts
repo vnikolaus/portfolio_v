@@ -1,5 +1,6 @@
 import { test, expect, it } from 'vitest'
 import { User } from '../../entities/User'
+import { SHA1 } from 'crypto-js'
 
 const user = new User({ name: 'Vitest', email: 'vitest@test.com', password: 'test' })
 
