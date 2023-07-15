@@ -26,4 +26,9 @@ export class MySqlUsersRepository implements IUsersRepository {
         const [ data ] = await conn.query(`SELECT name, email, created_at FROM users`)
         return data
     }
+
+    async delete(id: string): Promise<void> {
+        await conn.query(`DELETE FROM users WHERE id = ?`, [id])
+        console.log(`User ID: ${id} has deleted`);
+    }
 }
