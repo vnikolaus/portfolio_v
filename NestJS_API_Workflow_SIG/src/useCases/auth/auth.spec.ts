@@ -5,7 +5,7 @@ import { mockRequest, tokenMock } from './mocks/AuthMocks'
 import * as USER from '../../constants/user.constants'
 import { MockError } from './errors/errors'
 
-describe(`Test's Cell - UseCase`, () => {
+describe(`Test's Auth - UseCase`, () => {
     let authController: AuthController
     let authService: AuthService
 
