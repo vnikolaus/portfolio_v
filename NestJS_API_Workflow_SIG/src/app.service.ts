@@ -12,7 +12,7 @@ export class AppService {
 
             return cells
         } catch (err) {
-            new SessionError(err.error)
+            throw new SessionError(err.code)
         }
     }
 }
