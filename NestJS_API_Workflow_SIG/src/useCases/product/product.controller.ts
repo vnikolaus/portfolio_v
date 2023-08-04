@@ -1,4 +1,4 @@
-import { Body, Controller, HttpCode, HttpStatus, Param, Post, Get, UseGuards } from '@nestjs/common'
+import { Body, Controller, HttpCode, HttpStatus, Param, Post, Get, Put, Delete, UseGuards } from '@nestjs/common'
 import { ProductDTO } from './dto/product.dto'
 import { ProductService } from './product.service'
 import { DeptoCompras } from '../auth/decorators/deptoCompras.decorator'
@@ -23,7 +23,7 @@ export class ProductController {
         return newProduct
     }
 
-    @Post('/update/:id')
+    @Put('/update/:id')
     @DeptoCompras()
     async update(@Param() id: number, @Body() product: ProductDTO) {
         const updatedProduct = await this.prodService.update(id, product)
@@ -31,7 +31,7 @@ export class ProductController {
     }
 
     @HttpCode(HttpStatus.OK)
-    @Post('/delete/:id')
+    @Delete('/delete/:id')
     @DeptoCompras()
     async remove(@Param() id: number) {
         const result = await this.prodService.delete(id)

@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post, Request, UseGuards } from '@nestjs/common'
+import { Body, Controller, Get, Param, Post, Request, Put, Delete, UseGuards } from '@nestjs/common'
 import { Product } from 'src/entities/product.entity'
 import { AuthRequest } from '../auth/typings/interfaces'
 import { SigService } from './sig.service'
@@ -34,7 +34,7 @@ export class SigController {
     }
 
     @IsHolding()
-    @Post('/:id/add/products')
+    @Put('/:id/add/products')
     async addProducts(@Param() id: number, @Body() products: Product[]) {
         let sig: Sig = null
 
@@ -46,7 +46,7 @@ export class SigController {
     }
 
     @IsHolding()
-    @Post('/:idSig/remove/:idProduct')
+    @Delete('/:idSig/remove/:idProduct')
     async removeProducts(@Param() ids: number) {
         const data = Object.values(ids)
         const idSig = data[0]

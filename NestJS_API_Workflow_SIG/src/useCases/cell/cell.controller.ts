@@ -1,4 +1,4 @@
-import { Body, Controller, Get, HttpCode, HttpStatus, Param, Post } from '@nestjs/common'
+import { Body, Controller, Get, HttpCode, HttpStatus, Param, Post, Put, Delete } from '@nestjs/common'
 import { Cell } from 'src/entities/cell.entity'
 import { CellService } from './cell.service'
 import { CellDTO } from './dto/cell.dto'
@@ -24,14 +24,14 @@ export class CellController {
     }
 
     @IsAdmin()
-    @Post('/add')
+    @Put('/add')
     async addMember(@Body() member: AddMemberProps): Promise<void> {
         await this.cellService.addMember(member)
     }
 
     @HttpCode(HttpStatus.OK)
     @IsAdmin()
-    @Post('/remove')
+    @Delete('/remove')
     async removeMember(@Body() member: AddMemberProps): Promise<void> {
         await this.cellService.removeMember(member)
     }
