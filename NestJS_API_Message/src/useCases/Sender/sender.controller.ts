@@ -2,7 +2,6 @@ import { Body, Controller, Get, HttpCode, HttpStatus, Post } from '@nestjs/commo
 import { SenderService } from './sender.service'
 import { SendMessageProps } from './typings/types'
 import { parsePhoneNumber, isValidPhoneNumber } from 'libphonenumber-js'
-import { sender } from '.'
 
 @Controller('sender')
 export class SenderController {
@@ -11,8 +10,8 @@ export class SenderController {
     @Get('/status')
     async getStatus() {
         return {
-            qr_code: sender.qr,
-            connected: sender.connection,
+            qr_code: this.senderService.qr,
+            connected: this.senderService.connection,
         }
     }
 
