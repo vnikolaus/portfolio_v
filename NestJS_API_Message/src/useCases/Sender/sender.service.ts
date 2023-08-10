@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common'
-import { create, Whatsapp, Message, SocketState } from 'venom-bot'
+import { create, Whatsapp, SocketState } from 'venom-bot'
 import { QRCode, SendMessageProps } from './typings/types'
 
 @Injectable()
@@ -23,8 +23,7 @@ export class SenderService {
 
     async sendMessage({ numbers, body }: SendMessageProps) {
         numbers.forEach((number) => {
-            // this.#client.sendText(number, body)
-            console.log(`Sending message to: ${number}\nContent: ${body}\n`)
+            this.#client.sendText(number, body)
         })
     }
 
@@ -35,28 +34,21 @@ export class SenderService {
 
         const status = (statusSession: string) => {
             this.#isConnected = ['isLogged', 'qrReadSuccess', 'chatsAvailable'].includes(statusSession)
-                ? (this.#isConnected = true)
-                : (this.#isConnected = false)
         }
 
         const start = (client: Whatsapp) => {
             this.#client = client
 
-            // client.onStateChange((state) => {
-            //     this.#isConnected = state === SocketState.CONNECTED
-            // })
+            client.onStateChange((state) => {
+                this.#isConnected = state === SocketState.CONNECTED
+            })
         }
 
-        qr({ base64Qr: 'QR-Teste', asciiQR: 'QR-Teste', attempts: 1 })
-        status('qrReadSuccess')
-        start(this.#client)
-
-        // Criação do serviço
-        // create(`sender-one`, qr, status)
-        //     .then((client) => start(client))
-        //     .catch((err) => {
-        //         console.log(err)
-        //     })
+        create(`sender-one`, qr, status)
+            .then((client) => start(client))
+            .catch((err) => {
+                console.log(err)
+            })
     }
 }
 
