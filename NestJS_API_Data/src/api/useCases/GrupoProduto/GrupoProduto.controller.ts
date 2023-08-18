@@ -1,15 +1,15 @@
 import { Controller, Get } from '@nestjs/common'
-import { GrupoAssuntoRepository } from '../../repositories/implementations/GrupoProduto.repository'
 import { KeyNeeded } from 'src/auth/decorators/key.decorator'
+import { GrupoProdutoService } from './GrupoProduto.service'
 
 @Controller('gp-produto')
 export class GrupoProdutoController {
-    constructor(private readonly repository: GrupoAssuntoRepository) {}
+    constructor(private readonly service: GrupoProdutoService) {}
 
     @Get('/:key')
     @KeyNeeded()
     async list() {
-        const grupoProdutos = await this.repository.listGrupoProduto()
+        const grupoProdutos = await this.service.listGrupoProduto()
         return grupoProdutos
     }
 }

@@ -6,7 +6,7 @@ import { GP_PRODUTO_QUERY } from 'src/api/constants/query.constants'
 export class GrupoAssuntoRepository {
     constructor(private db: Database) {}
 
-    async listGrupoProduto() {
+    async list() {
         const conn = await this.db.connection()
         const [rows, fields] = await conn.query(GP_PRODUTO_QUERY)
 
