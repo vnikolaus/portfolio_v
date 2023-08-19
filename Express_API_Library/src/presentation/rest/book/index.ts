@@ -14,7 +14,7 @@ export const bookRoutesFactory = (services: Config['services']) => {
     router.get('/:id', find(services.bookService))
     router.get('/:id/authors', getAuthors(services.bookService))
     router.delete('/:id', remove(services.bookService))
-    router.put('/:id', update(services.bookService))
+    router.patch('/:id', update(services.bookService))
     router.post('/', create(services.bookService))
 
     return router

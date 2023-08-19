@@ -12,7 +12,7 @@ export const authorRoutesFactory = (services: Config['services']) => {
     router.get('/', list(services.authorService))
     router.get('/:id', find(services.authorService))
     router.delete('/:id', remove(services.authorService))
-    router.put('/:id', update(services.authorService))
+    router.patch('/:id', update(services.authorService))
     router.post('/', create(services.authorService))
 
     return router
