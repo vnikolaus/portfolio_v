@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { getModelToken } from '@nestjs/mongoose'
 import { Test } from '@nestjs/testing'
 import { Model } from 'mongoose'
