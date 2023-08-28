@@ -19,7 +19,7 @@ describe('Request - Class', () => {
     describe('Timeout', () => {
         it(`Should throw a timeout error if request takes longer than ${timeout}ms `, async () => {
             const exceededTimeout = timeout + 10
-            sandbox.stub(request, request.get.name).callsFake(() => new Promise(res => setTimeout(res, exceededTimeout))) // callsFake -> quando chamar a funçao 'get', ele faz uma chamada falsa, retornando o valor determinado
+            sandbox.stub(request, request.get.name).callsFake(() => new Promise(res => setTimeout(res, exceededTimeout)))
 
             const req = request.createRequest({ url: 'https://testing.net', method: 'GET', timeout })
 
