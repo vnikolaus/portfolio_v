@@ -53,8 +53,8 @@ describe('Pagination - Class', () => {
             await assert.rejects(pagination.handleRequest(request), error)
             assert.deepStrictEqual(pagination.handleRequest.callCount, expectedCalls)
 
-            const lastOne = 1 // inicia do zero
-            const lastCall = pagination.handleRequest.getCall(lastOne).lastArg
+            const lastRegister = 1
+            const lastCall = pagination.handleRequest.getCall(lastRegister).lastArg
 
             assert.deepStrictEqual(lastCall.retries, expectedCalls)
 
