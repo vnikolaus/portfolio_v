@@ -163,6 +163,7 @@ describe('Pagination - Class', () => {
 
             const gen = pagination.paginated(req)
 
+            //Gen (iterator) - Test
             for await (const result of gen) { }
         })
 
