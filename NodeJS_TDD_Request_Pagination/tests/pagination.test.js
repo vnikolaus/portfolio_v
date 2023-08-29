@@ -169,7 +169,7 @@ describe('Pagination - Class', () => {
 
         it('Should stop request when return a empty array', async () => {
             const pagination = new Pagination()
-            const req = { url: 'google.com', page: 1 }
+            const req = { url: 'https://testing.net', page: 1 }
             pagination.threshold = 20
  
             sandbox.spy(pagination, pagination.paginated.name)
