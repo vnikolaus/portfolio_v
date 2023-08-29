@@ -136,7 +136,7 @@ describe('Pagination - Class', () => {
                 ...properties
             }
 
-            assert.deepStrictEqual(JSON.stringify(pagination), JSON.stringify(expectedProperties)) // JSON.stringify para o Request ser apenas um {} em ambas requisições
+            assert.deepStrictEqual(JSON.stringify(pagination), JSON.stringify(expectedProperties))
         })
 
         it('Should update request id on each request', async () => {
