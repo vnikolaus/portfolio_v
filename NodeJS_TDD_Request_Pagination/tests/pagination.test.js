@@ -53,10 +53,10 @@ describe('Pagination - Class', () => {
             await assert.rejects(pagination.handleRequest(request), error)
             assert.deepStrictEqual(pagination.handleRequest.callCount, expectedCalls)
 
-            const lastRegister = 1
-            const lastCall = pagination.handleRequest.getCall(lastRegister).lastArg
+            const lastCall = 1
+            const { retries } = pagination.handleRequest.getCall(lastCall).lastArg
 
-            assert.deepStrictEqual(lastCall.retries, expectedCalls)
+            assert.deepStrictEqual(retries, expectedCalls)
 
             const expectedObj = {
                 url: `${request.url}?tid=${request.page}`,
