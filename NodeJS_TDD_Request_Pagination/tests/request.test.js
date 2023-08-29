@@ -1,5 +1,6 @@
 const { describe, it, before, afterEach } = require('mocha')
 const { createSandbox } = require('sinon')
+const { expect } = require('chai')
 const assert = require('assert')
 const Request = require('../src/request')
 const Events = require('events')
@@ -29,7 +30,7 @@ describe('Request - Class', () => {
         it(`Should return ok when timeout is not hitted`, async () => {
             const expected = { success: 'ok' }
             sandbox.stub(request, request.get.name).resolves(expected)
-
+       
             const req = () => request.createRequest({ url: 'https://testing.net', method: 'GET', timeout })
 
             await assert.doesNotReject(req)
@@ -49,7 +50,7 @@ describe('Request - Class', () => {
             const httpEvent = new Events()
             
             const https = require('https')
-            sandbox.stub( 
+            sandbox.stub(
                 https,
                 https.get.name
             ).yields(responseEvent)

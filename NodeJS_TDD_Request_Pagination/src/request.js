@@ -8,7 +8,7 @@ class Request {
             https.get(url, res => {
                 const items = []
                 res
-                    .on('data', data => items.push(data))
+                    .on('data', data => items.push(data)) 
                     .on('end', () => resolve(JSON.parse(items.join(''))))
             }).on('error', reject)
         })
@@ -23,7 +23,7 @@ class Request {
     }
 
     PromiseTimeout(url, timeout) {
-        return new Promise((res, rej) => { 
+        return new Promise((res, rej) => {
             setTimeout(this.timeoutError(rej, url), timeout)
         })
     }
