@@ -18,11 +18,11 @@ class Request {
         method = method.toLowerCase()
         return Promise.race([
             this[method](url),
-            this.PromiseTimeout(url, timeout)
+            this.requestTimeout(url, timeout)
         ])
     }
 
-    PromiseTimeout(url, timeout) {
+    requestTimeout(url, timeout) {
         return new Promise((res, rej) => {
             setTimeout(this.timeoutError(rej, url), timeout)
         })
