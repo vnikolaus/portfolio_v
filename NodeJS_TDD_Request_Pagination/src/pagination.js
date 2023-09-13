@@ -41,7 +41,7 @@ class Pagination {
 
     async * paginated({ url, page }) {
         const result = await this.handleRequest({ url, page })
-        const lastIndex = result[result.length -1]?.tid ?? 0
+        const lastIndex = result.at(-1)?.tid ?? 0
         if (lastIndex === 0) return
 
         yield result
