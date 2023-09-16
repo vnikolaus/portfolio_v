@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PrizeDraw - WebSocket - Admin</title>
+    <link rel="stylesheet" href="/public/assets/css/styles.css">
+    <link rel="stylesheet" href="/public/styles/style.css">
+  </head>
+
+  <body class="main">
+    <header>
+      <a><img
+          id="logo"
+          src="/public/assets/images/loading.png"
+      /></a>
+    </header>
+
+    <div>
+      <label id="participants">Participantes: </label><span id="clientCount">0</span>
+    </div>
+
+    <div>
+      <button id="draw">Realizar Sorteio</button>
+    </div>
+
+    <div id="message" class="message"></div>
+
+    <script src="/public/assets/js/config.js"></script>
+    <script src="/public/assets/js/admin.js"></script>
+  </body>
+</html>
