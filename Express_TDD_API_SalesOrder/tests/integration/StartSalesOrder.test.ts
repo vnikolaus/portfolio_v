@@ -7,9 +7,7 @@ import { Product } from '../../src/domain/entities/Product'
 import { SalesOrder } from '../../src/domain/entities/SalesOrder'
 
 describe('#StartSalesOrder', async () => {
-    const codeClient = await generateCode(0, 6)
     const { props: clientProps } = new Client({
-        code: codeClient,
         name: 'Vitest',
         cnpj: '01.234.567/0001-01',
         active: true,
