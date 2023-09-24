@@ -26,12 +26,12 @@ export class ProductController {
         const products = req.body
 
         if (products.length) {
-            const newProduct: Product[] = []
+            const newProducts: Product[] = []
             for (const prod of products) {
                 const savedProduct = await this.repository.add(prod)
-                newProduct.push(savedProduct.props)
+                newProducts.push(savedProduct.props)
             }
-            return res.status(201).json(newProduct)
+            return res.status(201).json(newProducts)
         }
 
         const newProduct = await this.repository.add(products)
