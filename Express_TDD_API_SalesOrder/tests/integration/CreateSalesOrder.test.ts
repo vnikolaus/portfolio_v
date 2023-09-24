@@ -4,7 +4,7 @@ import { Client } from '../../src/domain/entities/Client'
 import { Product } from '../../src/domain/entities/Product'
 import { SalesOrder } from '../../src/domain/entities/SalesOrder'
 
-describe('#Instance', async () => {
+describe('#CreateSalesOrder', async () => {
     const { props: clientProps } = new Client({
         name: 'Vitest',
         cnpj: '01.234.567/0001-01',
