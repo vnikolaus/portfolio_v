@@ -4,6 +4,7 @@ import { DB } from '../../infra/database/db'
 interface RepoPD {
     list(): Promise<Product[]>
     find(id: string): Promise<Product>
+    findByCode(code: string): Promise<Product>
     add(product: Product): Promise<Product>
     remove(id: string): Promise<void>
 }
