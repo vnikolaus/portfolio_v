@@ -28,7 +28,7 @@ export class DB {
                 clients: [...this.clients.entries()],
                 products: [...this.products.entries()],
                 orders: [...this.orders.entries()],
-            })
+            }, null, 2)
         )
     }
 
