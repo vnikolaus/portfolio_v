@@ -45,7 +45,7 @@ describe('#SalesOrder - Controller', async () => {
         expect(orders).toContainEqual(salesOrder)
     })
 
-    it('Should find a single Product', async () => {
+    it('Should find a single Sale Order', async () => {
         const findedOrder = await salesOrderRepository.find(salesOrder.id)
 
         expect(findedOrder).toStrictEqual(salesOrder)
