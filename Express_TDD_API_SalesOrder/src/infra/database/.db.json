@@ -1,1 +1,68 @@
-{"clients":[["eda8f009-d0d7-4777-8905-2ee2b26dae97",{"id":"eda8f009-d0d7-4777-8905-2ee2b26dae97","code":"464302","name":"teste","cnpj":"01.001.001/0001-01","active":true}]],"products":[["ab7abfc4-492d-4154-97f0-a98997034fc2",{"id":"ab7abfc4-492d-4154-97f0-a98997034fc2","code":"CNH0000001","price":95,"stock":1000,"blocked":false}],["3d74ec09-06b5-4c5b-ab7e-f99ef49d622e",{"id":"3d74ec09-06b5-4c5b-ab7e-f99ef49d622e","code":"NKL0000001","price":370,"stock":500,"blocked":false}]],"orders":[["73397788-14a2-48a7-a5fc-d4c1ef4aec42",{"id":"73397788-14a2-48a7-a5fc-d4c1ef4aec42","client":{"id":"eda8f009-d0d7-4777-8905-2ee2b26dae97","code":"464302","name":"teste","cnpj":"01.001.001/0001-01","active":true},"products":[{"id":"3d74ec09-06b5-4c5b-ab7e-f99ef49d622e","code":"NKL0000001","price":370,"stock":325,"blocked":false},{"id":"ab7abfc4-492d-4154-97f0-a98997034fc2","code":"CNH0000001","price":95,"stock":825,"blocked":false}],"quantity":175}]]}
+{
+  "clients": [
+    [
+      "eda8f009-d0d7-4777-8905-2ee2b26dae97",
+      {
+        "id": "eda8f009-d0d7-4777-8905-2ee2b26dae97",
+        "code": "464302",
+        "name": "teste",
+        "cnpj": "01.001.001/0001-01",
+        "active": true
+      }
+    ]
+  ],
+  "products": [
+    [
+      "ab7abfc4-492d-4154-97f0-a98997034fc2",
+      {
+        "id": "ab7abfc4-492d-4154-97f0-a98997034fc2",
+        "code": "CNH0000001",
+        "price": 95,
+        "stock": 1000,
+        "blocked": false
+      }
+    ],
+    [
+      "3d74ec09-06b5-4c5b-ab7e-f99ef49d622e",
+      {
+        "id": "3d74ec09-06b5-4c5b-ab7e-f99ef49d622e",
+        "code": "NKL0000001",
+        "price": 370,
+        "stock": 500,
+        "blocked": false
+      }
+    ]
+  ],
+  "orders": [
+    [
+      "73397788-14a2-48a7-a5fc-d4c1ef4aec42",
+      {
+        "id": "73397788-14a2-48a7-a5fc-d4c1ef4aec42",
+        "client": {
+          "id": "eda8f009-d0d7-4777-8905-2ee2b26dae97",
+          "code": "464302",
+          "name": "teste",
+          "cnpj": "01.001.001/0001-01",
+          "active": true
+        },
+        "products": [
+          {
+            "id": "3d74ec09-06b5-4c5b-ab7e-f99ef49d622e",
+            "code": "NKL0000001",
+            "price": 370,
+            "stock": 325,
+            "blocked": false
+          },
+          {
+            "id": "ab7abfc4-492d-4154-97f0-a98997034fc2",
+            "code": "CNH0000001",
+            "price": 95,
+            "stock": 825,
+            "blocked": false
+          }
+        ],
+        "quantity": 175
+      }
+    ]
+  ]
+}
