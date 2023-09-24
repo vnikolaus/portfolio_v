@@ -3,7 +3,7 @@ import { Client } from '../../src/domain/entities/Client'
 import { ZodError } from 'zod'
 import { generateCode } from '../../src/application/helpers/generateCode'
 
-describe('#Instance', async () => {
+describe('#Create', async () => {
     const codeClient = await generateCode(0, 6)
     const client = new Client({
         code: codeClient,
