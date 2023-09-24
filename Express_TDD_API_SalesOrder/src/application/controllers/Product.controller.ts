@@ -31,7 +31,7 @@ export class ProductController {
                 const savedProduct = await this.repository.add(prod)
                 newProducts.push(savedProduct.props)
             }
-            return res.status(201).json(newProducts)
+            return res.status(201).json({ newProducts: newProducts })
         }
 
         const newProduct = await this.repository.add(products)
