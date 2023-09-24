@@ -52,10 +52,7 @@ export class DB {
     async insert<T>(database: DBTypes, data: T) {
         await this.init()
 
-        const db = this[database]
-        const id = String(data.id)
-
-        db.set(id, data)
+        this[database].set(data.id, data)
         await this.save()
     }
 
