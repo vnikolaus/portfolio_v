@@ -5,6 +5,7 @@ type ProductType = {
     code: string
     price: number
     stock: number
+    total?: number
     blocked: boolean
 }
 

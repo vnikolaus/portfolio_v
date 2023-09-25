@@ -10,19 +10,19 @@ export class StartSalesOrder {
 
     async execute(order: SalesOrder) {
         const calculateTotal = new CalculateTotal()
-        const total = calculateTotal.execute(order)
+        const products = await calculateTotal.execute(order)
 
         const calculateDispatch = new CalculateDispatch()
-        const dispatch = calculateDispatch.execute(order.products)
+        const dispatch = await calculateDispatch.execute(order.products)
 
-        const newOrder: SalesOrder = new SalesOrder({
+        const newOrder = new SalesOrder({
             ...order,
+            products,
             dispatch,
-            total,
             startedAt: new Date().toLocaleDateString('pt-br'),
         })
 
-        const { props: newOrderProps } = await this.repository.add(newOrder)
+        const newOrderProps = await this.repository.add(newOrder.props)
         return newOrderProps
     }
 }

@@ -35,9 +35,9 @@
   ],
   "orders": [
     [
-      "73397788-14a2-48a7-a5fc-d4c1ef4aec42",
+      "b8685537-d542-4e6d-8dbe-8cf0a3300fc2",
       {
-        "id": "73397788-14a2-48a7-a5fc-d4c1ef4aec42",
+        "id": "b8685537-d542-4e6d-8dbe-8cf0a3300fc2",
         "client": {
           "id": "eda8f009-d0d7-4777-8905-2ee2b26dae97",
           "code": "464302",
@@ -51,17 +51,21 @@
             "code": "NKL0000001",
             "price": 370,
             "stock": 325,
-            "blocked": false
+            "blocked": false,
+            "total": 64750
           },
           {
             "id": "ab7abfc4-492d-4154-97f0-a98997034fc2",
             "code": "CNH0000001",
             "price": 95,
             "stock": 825,
-            "blocked": false
+            "blocked": false,
+            "total": 16625
           }
         ],
-        "quantity": 175
+        "quantity": 175,
+        "dispatch": 4882.5,
+        "startedAt": "24/09/2023"
       }
     ]
   ]

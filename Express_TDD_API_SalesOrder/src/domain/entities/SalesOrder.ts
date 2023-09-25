@@ -7,7 +7,6 @@ type SalesOrderType = {
     products: Product | Product[]
     quantity: number
     dispatch?: number
-    total?: number
     startedAt?: Date
 }
 

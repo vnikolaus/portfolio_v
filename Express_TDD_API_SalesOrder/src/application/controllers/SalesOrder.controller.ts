@@ -4,6 +4,8 @@ import { ClientRepository } from '../repositories/ClientRepository'
 import { ProductRepository } from '../repositories/ProductRepository'
 import { Product } from '../../domain/entities/Product'
 import { SalesOrder } from '../../domain/entities/SalesOrder'
+import { StartSalesOrder } from '../useCases/StartSalesOrder'
+import { salesOrderRepository } from '../repositories'
 
 export class SalesOrderController {
     constructor(
@@ -45,7 +47,9 @@ export class SalesOrderController {
                 quantity,
             }
 
-            const { props: newOrder } = await this.repository.add(salesOrder)
+            const startSaleOrder = new StartSalesOrder(salesOrderRepository)
+            const { props: newOrder } = await startSaleOrder.execute(salesOrder)
+
             return res.status(201).json({ newOrder })
         } catch (err) {
             res.status(400).json({ error: err.message })

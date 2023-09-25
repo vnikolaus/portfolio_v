@@ -1,10 +1,17 @@
-import { Product } from '../../domain/entities/Product'
 import { SalesOrder } from '../../domain/entities/SalesOrder'
 
 export class CalculateTotal {
     execute(order: SalesOrder) {
-        const { quantity, products: { price } } = order
+        const { quantity, products } = order
 
-        return quantity * price
+        if (products.length) {
+            for (const prod of products) {
+                prod.total = +prod.price * +quantity
+            }
+            return products
+        }
+
+        products.total = +products.price * +quantity
+        return products
     }
 }
