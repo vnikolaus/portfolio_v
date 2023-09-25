@@ -35,11 +35,11 @@ describe('#StartSalesOrder', async () => {
         })
 
         const startSalesOrder = new StartSalesOrder(salesOrderRepository)
-        const newSalesOrder = await startSalesOrder.execute(orderProps)
+        const { props: newSalesOrder } = await startSalesOrder.execute(orderProps)
 
-        expect(newSalesOrder.props).toHaveProperty('id')
-        expect(newSalesOrder.props).toHaveProperty('dispatch')
-        expect(newSalesOrder.props).toHaveProperty('startedAt')
+        expect(newSalesOrder).toHaveProperty('id')
+        expect(newSalesOrder).toHaveProperty('dispatch')
+        expect(newSalesOrder).toHaveProperty('startedAt')
 
         await salesOrderRepository.remove(newSalesOrder.id)
     })
