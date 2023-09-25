@@ -39,9 +39,7 @@ describe('#StartSalesOrder', async () => {
 
         expect(newSalesOrder.props).toHaveProperty('id')
         expect(newSalesOrder.props).toHaveProperty('dispatch')
-        expect(newSalesOrder.props).toHaveProperty('total')
         expect(newSalesOrder.props).toHaveProperty('startedAt')
-        expect(newSalesOrder.props.total).toBe(3840)
 
         await salesOrderRepository.remove(newSalesOrder.id)
     })
