@@ -16,7 +16,7 @@ export class ProcessPayment {
         this.queue = registry.inject('queue')
     }
 
-    async execute(input: Input): Promise<Output> {
+    async execute(input: Input): Promise<void> {
         const { tid, price, status } = await this.paymentGateway.createTransaction(input.email, input.creditCardToken, input.price)
 
         const transaction = Transaction.create({
@@ -41,10 +41,4 @@ type Input = {
     email: string
     creditCardToken: string
     price: number
-}
-
-type Output = {
-    price: number
-    tid: string
-    status: string
 }
