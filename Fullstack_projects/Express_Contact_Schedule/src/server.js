@@ -17,7 +17,7 @@ const flash = require('connect-flash');
 const _route  = require('./routes'); 
 const path = require('path'); 
 const csrf = require('csurf'); 
-const { middleware_global, md_check_error_csrf, md_token_csrf, login_required } = require('./src/middlewares/middleware'); 
+const { middleware_global, md_check_error_csrf, md_token_csrf, login_required } = require('./middlewares/middleware'); 
 
 app.use(express.urlencoded({ extended: true })); 
 app.use(express.json());
