@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <title>Consult Stocks</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <h1 class="navbar-brand" href="/">Consult Stocks</h1>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="./index.html">Index</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./tst.html">Wallet</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html">Dividends Earning</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+      
+    <div class="container-fluid">
+      <div class="form-row">
+
+        <div class="col col-md-1"></div>
+        
+        <div class="col col-md-3 my-5">
+          <select class="custom-select custom-select-lg">
+            <option value="0" disabled selected>Select Stock</option>
+            <option value="BBAS3">BBAS3</option>
+            <option value="TRPL4">TRPL4</option>
+            <option value="SANB11">SANB11</option>
+            <option value="KLBN11">KLBN11</option>
+            <option value="EGIE3">EGIE3</option>
+            <option value="PSSA3">PSSA3</option>
+            <option value="SANB4">SANB4</option>
+            <option value="GGBR4">GGBR4</option>
+            <option value="VALE3">VALE3</option>
+            <option value="PETR4">PETR4</option>
+            <option value="WEGE3">WEGE3</option>
+            <option value="SAPR4">SAPR4</option>
+            <option value="TAEE11">TAEE11</option>
+            <option value="ALUP11">ALUP11</option>
+            <option value="BBSE3">BBSE3</option>
+            <option value="ITSA4">ITSA4</option>
+            <option value="CSAN3">CSAN3</option>
+            <option value="IBOV">IBOVESPA</option>
+          </select>
+        </div>
+
+        <div class="col col-md-2">
+            <img src="" class="logo" hidden="true">
+        </div>
+
+        <div class="col col-md-2">
+          <label class="label" id="up-fields">Cotação Atual
+            <input type="text" class="form-control form-control-lg" id="quotation" disabled><br>
+          </label>
+          <label class="label" id="up-fields">Variação - 1d
+            <input type="text" class="form-control form-control-lg" id="variation" disabled><br>
+          </label>
+        </div>
+
+        <div class="col col-md-2">
+          <label class="label" id="up-fields">Preço Teto
+            <input type="text" class="form-control form-control-lg" id="ceiling-price" disabled><br>
+          </label>
+          <label class="label" id="up-fields">Graham
+            <input type="text" class="form-control form-control-lg" id="graham" disabled><br>
+          </label>
+        </div>
+
+        <div class="col col-md-1"></div>
+
+      </div>
+
+        <form class="form">
+          <div class="form-row my-3">
+            
+            <div class="col-1">
+              <label class="label">VPA
+                <input type="text" class="form-control form-control-md" disabled><br>
+              </label>
+              <label class="label">LPA
+                <input type="text" class="form-control form-control-md" disabled><br>
+              </label>
+              <label class="label">CAGR - Luc
+                <input type="text" class="form-control form-control-md" disabled><br>
+              </label>
+              <label class="label">CAGR - Rec
+                <input type="text" class="form-control form-control-md" disabled><br>
+              </label>
+            </div>
+
+            <div class="col-1">
+              <label class="label">D.Y
+                <input type="text" class="form-control form-control-md" disabled><br>
+              </label>
+              <label class="label">Mg. EBIT
+                <input type="text" class="form-control form-control-md" disabled><br>
+              </label>
+              <label class="label">Mg. EBITDA
+                <input type="text" class="form-control form-control-md" disabled><br>
+              </label>
+              <label class="label">DIV/ PL
+                <input type="text" class="form-control form-control-md" disabled><br>
+              </label>
+            </div>
+
+            <div class="col-1">
+              <label class="label">DIV/ EBITDA
+                <input type="text" class="form-control form-control-md" disabled><br>
+              </label>
+              <label class="label">Mg. Liquida
+                <input type="text" class="form-control form-control-md" disabled><br>
+              </label>
+              <label class="label">P/VP
+                <input type="text" class="form-control form-control-md" disabled><br>
+              </label>
+              <label class="label">P/L
+                <input type="text" class="form-control form-control-md" disabled><br>
+              </label>
+            </div>
+
+            <div class="col-1">
+              <label class="label">EBIT
+                <input type="text" class="form-control form-control-md" disabled><br>
+              </label>
+              <label class="label">EBITDA
+                <input type="text" class="form-control form-control-md" disabled><br>
+              </label>
+              <label class="label">ROE
+                <input type="text" class="form-control form-control-md" disabled><br>
+              </label>
+              <label class="label">ROIC
+                <input type="text" class="form-control form-control-md" disabled><br>
+              </label>
+            </div>
+            
+            <div class="col col-md-1"></div>
+
+            <div class="col-6">
+              <div class="row justify-content-end">
+                <select name="select-graphic" class="select-graphic">
+                  <option value="price">Preço</option>
+                  <option value="dividend">Dividendo</option>
+                </select>
+              </div>
+              <canvas id="myChart"></canvas>
+            </div>              
+          </div>
+
+        </form>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../dist/bundle.js"></script>
+  </body>
+</html>
