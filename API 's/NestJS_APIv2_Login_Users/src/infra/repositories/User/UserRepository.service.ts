@@ -18,10 +18,10 @@ export class UserRepositoryService {
     }
 
     async find() {
-        return this.userModel.find()
+        return await this.userModel.find()
     }
 
     async findOne(email: string) {
-        return this.userModel.findOne({ email })
+        return await this.userModel.findOne({ email })
     }
 }

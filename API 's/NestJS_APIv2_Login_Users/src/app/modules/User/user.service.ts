@@ -16,6 +16,6 @@ export class UserService {
     }
 
     async findOne(email: string) {
-        return this.repository.findOne(email)
+        return await this.repository.findOne(email)
     }
 }
