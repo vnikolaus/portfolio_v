@@ -31,6 +31,7 @@
 1. Recebe uma nova requisição de peça;
 2. Gera uma nova movimentação (status '*processing*');
 3. Envia a nova movimentação para a fila (*RabbitMQ*);
+4. Retorna uma nova movimentação com o status "*processing*".
 
 #### Microservice - Processment:
 1. Recebe a nova movimentação do RabbitMQ;
