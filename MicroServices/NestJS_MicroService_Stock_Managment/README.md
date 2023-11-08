@@ -59,7 +59,7 @@
 2. Movimentação rejeitada: <br>
 ![image](https://github.com/vnikolaus/portifolio_v/assets/111655667/75b093c7-a0c6-4c3f-97a2-15285e72d3de)
 
-### CloudAMQP *RabbitMQ*:
+### CloudAMQP - *RabbitMQ*:
 
 - Payload inserido na fila:
 ![image](https://github.com/vnikolaus/portifolio_v/assets/111655667/6cf312bb-ca4a-4c8e-a1b8-0058e5b0012f)
