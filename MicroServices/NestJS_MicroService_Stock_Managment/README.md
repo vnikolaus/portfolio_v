@@ -8,6 +8,7 @@
 - Pg-promise
 - Amqplib - *RabbitMQ*
 - Dotenv
+- Class-validator
 - Docker
 
 #### Serviços rodando em containers exclusivos: <br>
