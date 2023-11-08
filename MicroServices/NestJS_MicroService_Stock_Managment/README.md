@@ -4,7 +4,7 @@
 #### **Framework**: - NestJS
 - Typescript
 - Jest
-- ElephantSQL - *Postgres (Cloud)*
+- ElephantSQL - *PostgresDB (Cloud)*
 - Pg-promise
 - Amqplib - *RabbitMQ*
 - Dotenv
