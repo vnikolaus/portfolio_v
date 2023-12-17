@@ -1,13 +1,13 @@
 export class CalculateTotal {
     readonly #dailyPrice = 180
     readonly #firstHour = 15
-    readonly #aditionalHours = 10
+    readonly #additionalHours = 10
     readonly #tolerancy = 0
 
     #calculatePermanency(hours: number) {
         let total = 0
         for (let i = 0; i < hours; i++) {
-            i === 0 ? total += this.#firstHour : total += this.#aditionalHours
+            i === 0 ? total += this.#firstHour : total += this.#additionalHours
         }
         return total
     }
