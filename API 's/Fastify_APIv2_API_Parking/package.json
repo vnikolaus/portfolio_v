@@ -1,0 +1,23 @@
+{
+  "name": "api_parking_manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.ts",
+  "scripts": {
+    "dev": "tsx watch --env-file .env src/main.ts",
+    "test": "vitest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/postgres": "^5.2.2",
+    "axios": "^1.6.2",
+    "dotenv": "^16.3.1",
+    "fastify": "^4.25.0",
+    "fastify-plugin": "^4.5.1",
+    "pg": "^8.11.3",
+    "tsx": "^4.6.2",
+    "vitest": "^1.0.4"
+  }
+}
