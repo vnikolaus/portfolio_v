@@ -4,6 +4,10 @@ export class DeleteCar {
     constructor(private readonly parkingRepository: ParkingRepository) {}
 
     async exec(id: number) {
-        await this.parkingRepository.delete(id)
+        try {
+            await this.parkingRepository.delete(id)
+        } catch (err) {
+            return { error: err.message }
+        }
     }
 }
