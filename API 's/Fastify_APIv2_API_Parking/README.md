@@ -61,7 +61,7 @@
 #### com E2E:
 ![image](https://github.com/vnikolaus/portifolio_v/assets/111655667/df0abdc8-fd49-4ae9-b7fb-a2fab2f9d4d1)<br>
 
-#### sem E2E:
+#### sem E2E ( requisições ao banco de dados mockadas ):
 ![image](https://github.com/vnikolaus/portifolio_v/assets/111655667/90610934-15f8-470a-9dac-390a8b1641dd)<br>
 
 #### Test useCase - CalculeTotal:
