@@ -13,24 +13,20 @@ export class CalculateTotal {
     }
 
     async exec(checkin: Date, checkout: Date) {
-        try {
-            const days = checkout.getUTCDate() - checkin.getUTCDate()
-            const hours = new Date(checkout - checkin).getUTCHours()
-            const minutes = new Date(checkout - checkin).getUTCMinutes()
-            const entrance = checkin.getUTCHours(), exit = checkout.getUTCHours()
-            const exactly24Hours = (hours === 0 && minutes === 0)
-            const dayNotCompleted = (entrance > exit)
-            const dayCompleted = (entrance < exit)
-            const firstHourNotCompleted = (hours < 1 && minutes > 15)
-            const tolerancyTime = (hours < 1 && minutes <= 15)
-            if (days > 0 && exactly24Hours) return days * this.#dailyPrice
-            else if (days > 0 && dayNotCompleted) return Math.min((days - 1) * this.#dailyPrice + Math.min(this.#calculatePermanency(hours), days * this.#dailyPrice), days * this.#dailyPrice)
-            else if (days > 0 && dayCompleted) return (days * this.#dailyPrice) + Math.min(this.#calculatePermanency(hours), days * this.#dailyPrice) 
-            else if (firstHourNotCompleted) return this.#firstHour
-            else if (tolerancyTime) return this.#tolerancy
-            else return Math.min(this.#calculatePermanency(hours), this.#dailyPrice)
-        } catch (err) {
-            return { error: err.message }
-        }
+        const days = checkout.getUTCDate() - checkin.getUTCDate()
+        const hours = new Date(checkout - checkin).getUTCHours()
+        const minutes = new Date(checkout - checkin).getUTCMinutes()
+        const entrance = checkin.getUTCHours(), exit = checkout.getUTCHours()
+        const exactly24Hours = (hours === 0 && minutes === 0)
+        const dayNotCompleted = (entrance > exit)
+        const dayCompleted = (entrance < exit)
+        const firstHourNotCompleted = (hours < 1 && minutes > 15)
+        const tolerancyTime = (hours < 1 && minutes <= 15)
+        if (days > 0 && exactly24Hours) return days * this.#dailyPrice
+        else if (days > 0 && dayNotCompleted) return Math.min((days - 1) * this.#dailyPrice + Math.min(this.#calculatePermanency(hours), days * this.#dailyPrice), days * this.#dailyPrice)
+        else if (days > 0 && dayCompleted) return (days * this.#dailyPrice) + Math.min(this.#calculatePermanency(hours), days * this.#dailyPrice) 
+        else if (firstHourNotCompleted) return this.#firstHour
+        else if (tolerancyTime) return this.#tolerancy
+        else return Math.min(this.#calculatePermanency(hours), this.#dailyPrice)
     }
 }
