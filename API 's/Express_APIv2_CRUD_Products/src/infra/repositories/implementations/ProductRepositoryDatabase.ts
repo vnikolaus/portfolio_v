@@ -69,45 +69,4 @@ export class ProductRepositoryDatabase implements ProductRepository {
         }
         await this.db.deleteItem(params)
     }
-
-    // async update(id: string, data: Partial<Product>) {
-    //     // METODO 1
-    //     const existentProduct = await this.findById(id)
-    //     const params = {
-    //         TableName: "Thread",
-    //         Key: {
-    //             code: { S: existentProduct.code }
-    //         },
-    //         UpdateExpression: "set description = :val1, storage = :val2, price = :val3, supplier = :val4, barcode = :val5",
-    //         ConditionExpression: "id = :val6",
-    //         ExpressionAttributeValues: {
-    //             ':val1': {S: data.description ?? existentProduct.description },
-    //             ':val2': {S: data.storage ?? existentProduct.storage },
-    //             ':val3': {S: data.price ?? existentProduct.price },
-    //             ':val4': {S: data.supplier ?? existentProduct.supplier },
-    //             ':val5': {S: data.barcode ?? existentProduct.barcode },
-    //             ':val6': {S: id}
-    //         },
-    //         ReturnValues: "ALL_NEW"
-    //     }
-    //     await this.db.updateItem(params, this.#timeout)
-
-    //     // METODO 2
-    //     const updatedCommand = new UpdateItemCommand({
-    //         TableName: this.#table,
-    //         Key: { 
-    //             code: { S: existentProduct.code }
-    //         },
-    //         UpdateExpression: 'set description = :description, storage = :storage, price = :price, supplier = :supplier, barcode = :barcode',
-    //         ExpressionAttributeValues: { 
-    //             ':description': { S: data.description ?? existentProduct.description },
-    //             ':storage': { S: data.storage ?? existentProduct.storage },
-    //             ':price': { S: data.price ?? existentProduct.price },
-    //             ':supplier': { S: data.supplier ?? existentProduct.supplier },
-    //             ':barcode': { S: data.barcode ?? existentProduct.barcode },
-    //         },
-    //         ReturnValues: 'ALL_NEW'
-    //     })
-    //     await this.db.send(updatedCommand)
-    // }
 }
