@@ -2,6 +2,7 @@
 
 ## Bibliotecas / Ferramentas:
 #### **Framework**: - NestJS
+- NodeJS
 - Typescript
 - Jest
 - Mongoose - *MongoDB*

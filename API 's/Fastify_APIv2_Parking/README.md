@@ -7,6 +7,7 @@
 
 ## Bibliotecas / Ferramentas:
 #### **Framework**: - Fastify
+- NodeJS
 - Typescript
 - Vitest
 - Postgres - *ElephantSQL*

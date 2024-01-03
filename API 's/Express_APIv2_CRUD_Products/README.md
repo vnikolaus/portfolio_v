@@ -7,6 +7,7 @@
 
 ## Bibliotecas / Ferramentas:
 #### **Framework**: - ExpressJS
+- NodeJS
 - Typescript
 - Vitest
 - DynamoDB - *AWS-SDK*
