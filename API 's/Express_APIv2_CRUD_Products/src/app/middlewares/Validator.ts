@@ -56,9 +56,9 @@ export class Validator {
     static updateProduct(req: UpdateRequest, res: Response, next: NextFunction) {
         try {
             const schema = z.object({
-                description: z.string().optional(),
+                description: z.string().max(45).optional(),
                 storage: z.string().length(2).optional(),
-                price: z.string().optional(),
+                price: z.string().max(15).optional(),
                 supplier: z.string().length(6).optional(),
                 barcode: z.string().length(9).optional(),
             })
