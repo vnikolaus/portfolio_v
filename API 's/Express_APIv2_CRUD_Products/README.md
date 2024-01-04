@@ -46,7 +46,7 @@
 ## Endpoints:
 
 ```
-Entity Product: {
+Product: {
     id: string
     code: string
     description: string
@@ -67,6 +67,7 @@ Entity Product: {
 
 ### - /prd/list
 **@Method**: GET <br>
+**@Returns**: Array<Product>
 
 ![Alt text](imgs/listProducts.png) <br>
 
@@ -82,6 +83,7 @@ Entity Product: {
    barcode: string  *required
 ```
 }
+**@Returns**: Product
 
 ![Alt text](imgs/addProduct.png) <br>
 
@@ -98,6 +100,7 @@ Entity Product: {
    barcode: string  *optional
 ```
 }
+**@Returns**: Product
 
 ![Alt text](imgs/updateProduct.png)
 
@@ -105,6 +108,7 @@ Entity Product: {
 ### - /prd/delete/:id
 **@Method**: DELETE <br>
 **@Params**: { *id*: `string` } <br>
+**@Returns**: { deleted_id: string }
 
 ![Alt text](imgs/deleteProduct.png)
 
