@@ -13,8 +13,8 @@ export type Config = {
 }
 
 (() => {
-    const app = new App().app
-    const client = new DB().client
+    const { app } = new App()
+    const { client } = new DB()
     const config: Config = {
         app,
         services: {
