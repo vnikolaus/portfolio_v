@@ -24,8 +24,7 @@ export class Validator {
                 const error = err.errors.at(-1)
                 res.json({ error: error.message });
             } else {
-                res.json({ error: 'Unexpected error' });
-                console.error(err);
+                res.json({ error: err.message || 'Unexpected error' });
             }
         }
     }
@@ -70,8 +69,7 @@ export class Validator {
                 const error = err.errors.at(-1)
                 res.json({ error: error.message });
             } else {
-                res.json({ error: 'Unexpected error' });
-                console.error(err);
+                res.json({ error: err.message || 'Unexpected error' });
             }
         }
     }
@@ -88,8 +86,7 @@ export class Validator {
                 const error = err.errors.at(-1)
                 res.json({ error: error.message });
             } else {
-                res.json({ error: 'Unexpected error' });
-                console.error(err);
+                res.json({ error: err.message || 'Unexpected error' });
             }
         }
     }
