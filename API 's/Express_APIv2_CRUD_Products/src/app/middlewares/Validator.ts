@@ -63,7 +63,7 @@ export class Validator {
                 barcode: z.string().length(9).optional(),
             })
             const validInput = schema.parse(req.body)
-            if (nonNumberRegex.test(validInput.price)) throw new Error('Price must be only numbers')
+            if (validInput.price && nonNumberRegex.test(validInput.price)) throw new Error('Price must be only numbers')
             req.update = validInput
             next()
         } catch (err) {
