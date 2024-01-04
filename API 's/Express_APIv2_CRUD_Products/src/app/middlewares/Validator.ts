@@ -53,6 +53,7 @@ export class Validator {
         }
     }
     static updateProduct(req: UpdateRequest, res: Response, next: NextFunction) {
+        const nonNumberRegex = /[^0-9]/
         try {
             const schema = z.object({
                 description: z.string().max(45).optional(),
@@ -62,6 +63,7 @@ export class Validator {
                 barcode: z.string().length(9).optional(),
             })
             const validInput = schema.parse(req.body)
+            if (nonNumberRegex.test(validInput.price)) throw new Error('Price must be only numbers')
             req.update = validInput
             next()
         } catch (err) {
