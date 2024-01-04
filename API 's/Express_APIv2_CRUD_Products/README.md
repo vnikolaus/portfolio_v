@@ -46,7 +46,7 @@
 ## Endpoints:
 
 ```
-Product: {
+Example - Product: {
     id: string
     code: string
     description: string
