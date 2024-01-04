@@ -67,7 +67,7 @@ Product: {
 
 ### - /prd/list
 **@Method**: GET <br>
-**@Returns**: Array<Product>
+**@Returns**: Product[]
 
 ![Alt text](imgs/listProducts.png) <br>
 
