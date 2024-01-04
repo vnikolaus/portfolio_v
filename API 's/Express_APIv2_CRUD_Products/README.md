@@ -82,7 +82,7 @@ Product: {
    supplier: string  *required
    barcode: string  *required
 ```
-}
+} <br>
 **@Returns**: Product
 
 ![Alt text](imgs/addProduct.png) <br>
@@ -99,7 +99,7 @@ Product: {
    supplier: string  *optional
    barcode: string  *optional
 ```
-}
+} <br>
 **@Returns**: Product
 
 ![Alt text](imgs/updateProduct.png)
