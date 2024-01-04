@@ -3,8 +3,6 @@ import { GetProduct } from '../../src/app/useCases/GetProduct'
 import { ProductRepositoryDatabase } from '../../src/infra/repositories/implementations/ProductRepositoryDatabase'
 
 describe('GetProduct Test', () => {
-    const db = {}
-    const mockRepository = new ProductRepositoryDatabase(db)
     const mockReturn = {
         id: "641d61b5-d446-4b98-80c0-34ae5762bb25",
         code: "PRD-VITEST",
@@ -18,6 +16,8 @@ describe('GetProduct Test', () => {
     }
 
     test('Find a single product', async () => {
+        const db = {}
+        const mockRepository = new ProductRepositoryDatabase(db)
         const id = '641d61b5-d446-4b98-80c0-34ae5762bb25'
         const get = new GetProduct(mockRepository)
         const spy = vi.spyOn(get, 'exec').mockReturnValue(mockReturn)

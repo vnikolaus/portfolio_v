@@ -3,8 +3,6 @@ import { UpdateProduct } from '../../src/app/useCases/UpdateProduct'
 import { ProductRepositoryDatabase } from '../../src/infra/repositories/implementations/ProductRepositoryDatabase'
 
 describe('UpdateProduct Test', () => {
-    const db = {}
-    const mockRepository = new ProductRepositoryDatabase(db)
     const mockReturn = {
         id: "641d61b5-d446-4b98-80c0-34ae5762bb25",
         code: "PRD-VITEST",
@@ -18,6 +16,8 @@ describe('UpdateProduct Test', () => {
     }
 
     test('Update a existent product', async () => {
+        const db = {}
+        const mockRepository = new ProductRepositoryDatabase(db)
         const id = '641d61b5-d446-4b98-80c0-34ae5762bb25'
         const input = { price: "150" }
         const update = new UpdateProduct(mockRepository)

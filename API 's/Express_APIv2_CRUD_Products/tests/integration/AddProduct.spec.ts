@@ -4,8 +4,6 @@ import { ProductRepository } from '../../src/app/repositories/ProductRepository'
 import { AddProduct } from '../../src/app/useCases/AddProduct'
 
 describe('AddProduct Test', () => {
-    const db = {}
-    const mockRepository = new ProductRepositoryDatabase(db)
     const mockReturn = {
         id: "641d61b5-d446-4b98-80c0-34ae5762bb25",
         code: "PRD-VITEST",
@@ -19,6 +17,8 @@ describe('AddProduct Test', () => {
     }
 
     test('Add a new product', async () => {
+        const db = {}
+        const mockRepository = new ProductRepositoryDatabase(db)
         const input = {
             code: "PRD-VITEST",
             description: "PRODUTO-TESTE",
