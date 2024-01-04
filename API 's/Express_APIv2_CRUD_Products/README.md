@@ -45,8 +45,23 @@
 
 ## Endpoints:
 
+```
+Entity Product: {
+    id: string
+    code: string
+    description: string
+    storage: string
+    price: string
+    supplier: string
+    barcode: string
+    createdAt: string
+    updatedAt: string
+}
+```
+
 ### - /prd?id=:id
 **@Method**: GET <br>
+**@Returns**: Product
 
 ![Alt text](imgs/getProduct.png) <br>
 
