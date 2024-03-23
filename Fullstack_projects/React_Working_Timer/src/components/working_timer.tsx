@@ -26,7 +26,6 @@ export function WorkingTimer(props: Props): JSX.Element {
   const [fullWorkingTime, setFullWorkingTime] = React.useState(0);
   const [pomodoroCycle, setPomodoroCycle] = React.useState(0);
 
-  // parecido com eventlistener
   useEffect(() => {
     if (working) document.body.classList.add('working');
     if (resting) document.body.classList.remove('working');
