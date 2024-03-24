@@ -4,7 +4,7 @@ import { ReservationRepositoryDatabase } from "@infra/repositories/Reservation.r
 import { Config } from "@types/types";
 import { Server } from "../../server";
 
-function ConfigFactory(app: Server): Config {
+export function ConfigFactory(app: Server): Config {
     const book_repository = new BookRepositoryDatabase(prisma_client)
     const reservation_repository = new ReservationRepositoryDatabase(prisma_client)
     const config: Config = {

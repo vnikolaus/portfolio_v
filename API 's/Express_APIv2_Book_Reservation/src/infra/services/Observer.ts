@@ -4,6 +4,7 @@ import { BookRepositoryDatabase } from "@infra/repositories/Book.repository-data
 import { ReservationRepositoryDatabase } from "@infra/repositories/Reservation.repository-database"
 import { Config } from "@types/types"
 import { Server } from "../../server"
+import { ConfigFactory } from "./ConfigFactory"
 
 interface Observer {
     subscribe<T>(...observers: T): void
