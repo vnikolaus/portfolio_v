@@ -55,16 +55,11 @@ tests > e2e > API.spec.ts
 Altere a variável "e2e_disabled" para false, e habilitará os testes E2E.
 ```
 
-
 ## 🛠️ Construído com
 
 * [NPM](https://www.npmjs.com/) - Gerenciador de Pacotes
 * [ExpressJS](https://expressjs.com/pt-br/) - Framework utilizado
 * [PostgreSQL](https://www.postgresql.org/) - Banco de Dados utilizado
-
-## 🖇️ Colaborando
-
-Por favor, leia o [COLABORACAO.md](https://gist.github.com/usuario/linkParaInfoSobreContribuicoes) para obter detalhes sobre o nosso código de conduta e o processo para nos enviar pedidos de solicitação.
 
 ## 📌 Versão
 
