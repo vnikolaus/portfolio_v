@@ -50,8 +50,9 @@ execute o seguinte comando: "npm t" no terminal
 ### ⌨️ Testes E2E
 
 ```
+tests > e2e > API.spec.ts
+
 Altere a variável "e2e_disabled" para false, e habilitará os testes E2E.
-<img src="./imgs/image.png">
 ```
 
 ## 📦 Implantação
