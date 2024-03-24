@@ -56,7 +56,7 @@ tests > e2e > API.spec.ts
 Altere a variável "e2e_disabled" para false, e habilitará os testes E2E.
 ```
 
-### 📄 Endpoints
+## 📄 Endpoints
 
 Veja exemplos dos endpoints da aplicação aqui: [ENDPOINTS](./imgs/)
 
