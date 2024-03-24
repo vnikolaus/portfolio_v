@@ -4,33 +4,30 @@ API responsável por realizar novas reservas para livros virtuais.
 
 ### 📋 Pré-requisitos
 
-De que coisas você precisa para instalar o software e como instalá-lo?
-
 ```
 typescript
 tsx
 zod
-prisma @prisma/client
+prisma 
+@prisma/client
 express
 date-fns
 vitest
+axios
+docker
 
 ```
 
 ### 🔧 Instalação
 
-Uma série de exemplos passo-a-passo que informam o que você deve executar para ter um ambiente de desenvolvimento em execução.
-
-Diga como essa etapa será:
-
 ```
-Dar exemplos
+Altere o objeto (datasource db) dentro do arquivo "schema.prisma" com os dados de conexão do seu banco de dados.
 ```
 
-E repita:
+Após isso:
 
 ```
-Até finalizar
+realize a instalação das dependencias utilizando: "npm ci"
 ```
 
 Termine com um exemplo de como obter dados do sistema ou como usá-los para uma pequena demonstração.
