@@ -1,4 +1,4 @@
-# Microservice - Stock Managment
+# Microservice - Inventory Managment
 
 ## Bibliotecas / Ferramentas:
 #### **Framework**: - NestJS
