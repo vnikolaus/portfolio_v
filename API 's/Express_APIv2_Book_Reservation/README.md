@@ -51,7 +51,7 @@ execute o seguinte comando: "npm t" no terminal
 
 ```
 Altere a variável "e2e_disabled" para false, e habilitará os testes E2E.
-![image](./image.png)
+![image](./imgs/image.png)
 ```
 
 ## 📦 Implantação
