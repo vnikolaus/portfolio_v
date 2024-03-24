@@ -50,4 +50,4 @@ Para uma visualização mais detalhada, acesse diretamente o projeto desejado:
 ⚠️ Em atualização...
 
 
-### 😃 Muito obrigado pela visita !
+### 😃 Obrigado pela visita !
