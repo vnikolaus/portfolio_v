@@ -58,8 +58,9 @@ Altere a variável "e2e_disabled" para false, e habilitará os testes E2E.
 ## 🛠️ Construído com
 
 * [NPM](https://www.npmjs.com/) - Gerenciador de Pacotes
-* [ExpressJS](https://expressjs.com/pt-br/) - Framework utilizado
-* [PostgreSQL](https://www.postgresql.org/) - Banco de Dados utilizado
+* [NodeJS](https://nodejs.org/en)
+* [ExpressJS](https://expressjs.com/pt-br/) - Framework NodeJS utilizado
+* [PostgreSQL](https://www.postgresql.org/) - Banco de Dados
 
 ## 📌 Versão
 
