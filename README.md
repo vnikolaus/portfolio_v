@@ -50,4 +50,4 @@ Para uma visualização mais detalhada, acesse diretamente o repositório deseja
 ⚠️ Em atualização...
 
 
-## 🎁 Muito obrigado pela visita !
+### 😃 Muito obrigado pela visita !
