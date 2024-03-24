@@ -8,11 +8,11 @@ Repositório separado por sessões para facilitar a visualização.
 
 Veja por sessão:
 
-[API's](./API%20's/)
-[Microsserviços](./MicroServices/)
-[Projetos NodeJS](./NodeJS/)
-[Projetos WebSocket](./WebSocket/)
-[Projetos Fullstack](./Fullstack_projects/)
+* [API's](./API%20's/)
+* [Microsserviços](./MicroServices/)
+* [Projetos NodeJS](./NodeJS/)
+* [Projetos WebSocket](./WebSocket/)
+* [Projetos Fullstack](./Fullstack_projects/)
 
 ⚠️ Em atualização...
 
@@ -22,15 +22,15 @@ Veja por sessão:
 Para uma visualização mais detalhada, acesse diretamente o repositório desejado:
 
 ### 💻 API 's
-[Book_Reservation](./API%20's/Express_APIv2_Book_Reservation/)
-[CRUD_Products](./API%20's/Express_APIv2_CRUD_Products/)
-[Parking_Managment](./API%20's/Fastify_APIv2_Parking/)
-[JWT_Login_Users](./API%20's/NestJS_APIv2_Login_Users/)
+* [Book_Reservation](./API%20's/Express_APIv2_Book_Reservation/)
+* [CRUD_Products](./API%20's/Express_APIv2_CRUD_Products/)
+* [Parking_Managment](./API%20's/Fastify_APIv2_Parking/)
+* [JWT_Login_Users](./API%20's/NestJS_APIv2_Login_Users/)
 
 ### 💻 Microsserviços
-[Bank_Transaction](./MicroServices/Express_MicroService_Bank_Transaction/)
-[Ticket_Sale](./MicroServices/Express_MicroService_Buy_Ticket/)
-[Inventory_Managment](./MicroServices/NestJS_MicroService_Inventory_Managment/)
+* [Bank_Transaction](./MicroServices/Express_MicroService_Bank_Transaction/)
+* [Ticket_Sale](./MicroServices/Express_MicroService_Buy_Ticket/)
+* [Inventory_Managment](./MicroServices/NestJS_MicroService_Inventory_Managment/)
 
 ⚠️ Em atualização...
 
