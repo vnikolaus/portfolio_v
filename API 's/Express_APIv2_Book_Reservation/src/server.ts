@@ -16,7 +16,7 @@ export class Server {
     }
 
     connect() {
-        const port = parseInt(process.env.SERVER_PORT) ?? 3000
+        const port = parseInt(process.env.SERVER_PORT) ?? 3333
         this.app.listen(port, () => console.log(`Server online: http://localhost:${port}`))
     }
 
