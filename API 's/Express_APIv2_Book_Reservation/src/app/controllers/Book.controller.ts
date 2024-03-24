@@ -3,8 +3,9 @@ import { AddBook } from "@useCases/AddBook";
 import { DeleteBook } from "@useCases/DeleteBook";
 import { FindBook } from "@useCases/FindBook";
 import z from 'zod';
+import { Controller } from "./Controller";
 
-export class BookController {
+export class BookController implements Controller {
     async execute({ app, repositories }: Config) {
         app.on('post', '/add/book', async ({ body }: RequestData<BookProps>) => {
             const zod = z.object({

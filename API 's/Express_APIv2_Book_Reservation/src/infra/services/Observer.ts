@@ -1,3 +1,4 @@
+import { Controller } from "@controllers/Controller"
 import { prisma_client } from "@infra/database/connection"
 import { BookRepositoryDatabase } from "@infra/repositories/Book.repository-database"
 import { ReservationRepositoryDatabase } from "@infra/repositories/Reservation.repository-database"
@@ -11,15 +12,15 @@ interface Observer {
 }
 
 export class ControllersObserver implements Observer {
-    private _observers = []
+    private _observers: Controller[] = []
 
-    subscribe<T>(...observers: T): void {
+    subscribe(...observers: Controller[]): void {
         for(const obs of observers) {
             this._observers.push(obs)
         }
     }
 
-    unsubscribe<T>(observer: T): void {
+    unsubscribe(observer: Controller): void {
         const observer_index = this._observers.indexOf(observer)
         if (observer_index === -1) return
         this._observers.splice(observer_index, 1)

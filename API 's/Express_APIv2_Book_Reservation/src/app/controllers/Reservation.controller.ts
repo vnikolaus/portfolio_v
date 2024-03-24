@@ -1,11 +1,11 @@
 import { Config, RequestData, ReservationProps } from "@types/types";
 import { AddReservation } from "@useCases/AddReservation";
-import { CalculateDates } from "@useCases/CalculateDates";
 import { DeleteReservation } from "@useCases/DeleteReservation";
 import { FindReservations } from "@useCases/FindReservations";
-import z from 'zod'
+import z from 'zod';
+import { Controller } from "./Controller";
 
-export class ReservationController {
+export class ReservationController implements Controller {
     async execute({ app, repositories }: Config) {
         app.on('post', '/add/reservation', async ({ body }: RequestData<ReservationProps>) => {
             const zod = z.object({
