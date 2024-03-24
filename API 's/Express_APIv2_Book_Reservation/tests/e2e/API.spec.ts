@@ -7,9 +7,9 @@ describe('API - TEST', () => {
     it.skipIf(e2e_disabled)('Should insert & delete a new book', async () => {
         const url = `http://localhost:3000/add/book`
         const body = {
-                title: 'Livro Teste - 1',
+                title: 'Livro Teste - 2',
                 author: 'Vitest',
-                pages: 150,
+                pages: 300,
         }
         const response = await axios.post(url, body)
         const output = await response.data
@@ -19,7 +19,7 @@ describe('API - TEST', () => {
     })
 
     it.skipIf(e2e_disabled)('Should find a book', async () => {
-        const url = `http://localhost:3000/book/6`
+        const url = `http://localhost:3000/book/1`
         const response = await axios.get(url)
         const output = await response.data
         expect(output.id).toBeDefined()
@@ -29,7 +29,7 @@ describe('API - TEST', () => {
     it.skipIf(e2e_disabled)('Should insert & delete a new reservation', async () => {
         const url = `http://localhost:3000/add/reservation`
         const body = {
-            book_id: 6,
+            book_id: 1,
             duration: 10,
         }
         const response = await axios.post(url, body)
