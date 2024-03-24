@@ -20,21 +20,21 @@ docker
 
 ## 💻 Endpoints
 
-Método GET:
+GET:
 ```
 /book/:id
 
 /reservations
 ```
 
-Método POST:
+POST:
 ```
 /add/book
 
 /add/reservation
 ```
 
-Método DELETE:
+DELETE:
 ```
 /book/:id
 
