@@ -6,8 +6,7 @@ async function main() {
     const observer = new ControllersObserver()
     const book_controller = new BookController()
     const reservation_controller = new ReservationController()
-    observer.subscribe(book_controller)
-    observer.subscribe(reservation_controller)
+    observer.subscribe(book_controller, reservation_controller)
     observer.notify()
 }
 
