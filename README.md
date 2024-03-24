@@ -19,7 +19,7 @@ Veja por sessão:
 
 ## ⌨️ Visualização Detalhada
 
-Para uma visualização mais detalhada, acesse diretamente o repositório desejado:
+Para uma visualização mais detalhada, acesse diretamente o projeto desejado:
 
 ### 💻 API 's
 * [Book_Reservation](./API%20's/Express_APIv2_Book_Reservation/)
