@@ -29,7 +29,7 @@ Realize a instalação das dependencias utilizando: "npm ci"
 Após isso:
 
 ```
-Altere o objeto (datasource db) dentro do arquivo "schema.prisma" com os dados de conexão do seu banco de dados.
+Altere o objeto {datasource db} dentro do arquivo "schema.prisma" com os dados de conexão do seu banco de dados.
 ```
 
 E então:
