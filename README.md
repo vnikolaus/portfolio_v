@@ -1,4 +1,4 @@
-# Portfolio - View
+# Portfólio - View
 
 Repositório com idéias e projetos pessoais desenvolvidos por [Victor Nikolaus](https://github.com/vnikolaus)
 
