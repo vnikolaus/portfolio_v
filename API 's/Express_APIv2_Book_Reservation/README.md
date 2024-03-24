@@ -56,14 +56,6 @@ Veja alguns exemplos dos endpoints aqui: [ENDPOINTS](./imgs/)
 ✅ Gerar datas baseado na duração da reserva
 ```
 
-### ⌨️ Testes E2E
-
-```
-Path: tests > e2e > API.spec.ts
-
-Altere a variável "e2e_disabled" para false, e habilitará os testes E2E.
-```
-
 
 ## 🛠️ Construído com
 
