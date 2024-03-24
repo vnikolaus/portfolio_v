@@ -30,7 +30,12 @@ Após isso:
 Realize a instalação das dependencias utilizando: "npm ci"
 ```
 
-Termine com um exemplo de como obter dados do sistema ou como usá-los para uma pequena demonstração.
+E então:
+
+```
+Crie as migrations do Prisma executando o comando "npx prisma migrate dev"
+```
+
 
 ## ⚙️ Executando os testes
 
