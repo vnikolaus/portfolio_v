@@ -1,8 +1,4 @@
 import { Controller } from "@controllers/Controller"
-import { prisma_client } from "@infra/database/connection"
-import { BookRepositoryDatabase } from "@infra/repositories/Book.repository-database"
-import { ReservationRepositoryDatabase } from "@infra/repositories/Reservation.repository-database"
-import { Config } from "@types/types"
 import { Server } from "../../server"
 import { ConfigFactory } from "./ConfigFactory"
 
