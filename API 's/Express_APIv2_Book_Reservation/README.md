@@ -72,6 +72,7 @@ Altere a variável "e2e_disabled" para false, e habilitará os testes E2E.
 * [ExpressJS](https://expressjs.com/pt-br/)
 * [PostgreSQL](https://www.postgresql.org/)
 * [Prisma](https://www.prisma.io/)
+* [Vitest](https://vitest.dev/)
 
 ## 📌 Versão
 
