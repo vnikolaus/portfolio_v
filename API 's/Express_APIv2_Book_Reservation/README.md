@@ -20,15 +20,28 @@ docker
 
 ## 💻 Endpoints
 
+Método GET:
 ```
-/add/book
-
-/add/reservation
+/book/:id
 
 /reservations
 ```
 
-Veja exemplos dos endpoints aqui: [ENDPOINTS](./imgs/)
+Método POST:
+```
+/add/book
+
+/add/reservation
+```
+
+Método DELETE:
+```
+/book/:id
+
+/reservation/:id
+```
+
+Veja alguns exemplos dos endpoints aqui: [ENDPOINTS](./imgs/)
 
 
 ## ⚙️ Testes Automatizados
