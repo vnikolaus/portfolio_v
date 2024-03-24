@@ -18,7 +18,6 @@ docker
 
 ```
 
-[Images](./imgs/)
 
 ### 🔧 Instalação
 
@@ -56,6 +55,10 @@ tests > e2e > API.spec.ts
 
 Altere a variável "e2e_disabled" para false, e habilitará os testes E2E.
 ```
+
+### 📄 Endpoints
+
+Veja exemplos dos endpoints da aplicação aqui: [endpoints](./imgs/)
 
 ## 🛠️ Construído com
 
