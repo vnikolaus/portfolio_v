@@ -11,13 +11,13 @@ export class Server {
         this.middlewares()
     }
 
-    middlewares() {
-        this.app.use(express.json())
-    }
-
     connect() {
         const port = parseInt(process.env.SERVER_PORT) ?? 3000
         this.app.listen(port, () => console.log(`Server online: http://localhost:${port}`))
+    }
+
+    middlewares() {
+        this.app.use(express.json())
     }
 
     on(method: string, endpoint: string, callback: Function) {
