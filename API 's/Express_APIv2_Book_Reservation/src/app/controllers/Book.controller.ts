@@ -6,7 +6,7 @@ import z from 'zod';
 import { Controller } from "./Controller";
 
 export class BookController implements Controller {
-    async execute({ app, repositories }: Config) {
+    execute({ app, repositories }: Config) {
         app.on('post', '/add/book', async ({ body }: RequestData<BookProps>) => {
             const zod = z.object({
                 title: z.string().min(1),
