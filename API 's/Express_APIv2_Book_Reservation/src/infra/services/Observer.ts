@@ -28,15 +28,7 @@ export class ControllersObserver implements Observer {
 
     notify(): Promise<void> {
         const app = new Server()
-        const book_repository = new BookRepositoryDatabase(prisma_client)
-        const reservation_repository = new ReservationRepositoryDatabase(prisma_client)
-        const config: Config = {
-            app,
-            repositories: {
-                book: book_repository,
-                reservation: reservation_repository
-            }
-        }
+        const config = ConfigFactory(app)
         this._observers.forEach(async obs => {
             await obs.execute(config)
         })
