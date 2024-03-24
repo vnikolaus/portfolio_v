@@ -7,9 +7,9 @@ import { Server } from "../../server"
 import { ConfigFactory } from "./ConfigFactory"
 
 interface Observer {
-    subscribe<T>(...observers: T): void
-    unsubscribe<T>(observer: T): void
-    notify(): Promise<void>
+    subscribe(...observers: Controller[]): void
+    unsubscribe(observer: Controller): void
+    notify(app: Server): Promise<void>
 }
 
 export class ControllersObserver implements Observer {
