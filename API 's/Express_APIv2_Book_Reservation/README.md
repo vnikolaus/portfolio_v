@@ -2,7 +2,7 @@
 
 API responsável por realizar novas reservas de uso para livros virtuais.
 
-### 📋 Pré-requisitos
+### 📋 Dependências
 
 ```
 typescript
@@ -18,47 +18,38 @@ docker
 
 ```
 
-
-### 🔧 Instalação
-
-```
-Inicie um novo projeto NodeJS executando o comando: "npm init -y"
-
-Realize a instalação das dependencias utilizando: "npm ci"
-```
-
-Após isso:
+## 💻 Endpoints
 
 ```
-Altere o objeto {datasource db} dentro do arquivo "schema.prisma" com os dados de conexão do seu banco de dados.
+/add/book
+
+/add/reservation
+
+/reservations
 ```
 
-E então:
+Veja exemplos dos endpoints aqui: [ENDPOINTS](./imgs/)
+
+
+## ⚙️ Testes Automatizados
 
 ```
-Crie as migrations do Prisma executando o comando "npx prisma migrate dev"
-```
-
-
-## ⚙️ Executando os testes
-
-```
-Adicione o seguinte script dentro de seu arquivo package.json: "test": "vitest"
-
-execute o seguinte comando: "npm t" no terminal
+✅ Adicionar livro
+✅ Buscar livro
+✅ Excluir livro
+✅ Criar nova reserva
+✅ Excluir reserva existente
+✅ Buscar todas as reservas
+✅ Gerar datas baseado na duração
 ```
 
 ### ⌨️ Testes E2E
 
 ```
-tests > e2e > API.spec.ts
+Path: tests > e2e > API.spec.ts
 
 Altere a variável "e2e_disabled" para false, e habilitará os testes E2E.
 ```
-
-## 📄 Endpoints
-
-Veja exemplos dos endpoints da aplicação aqui: [ENDPOINTS](./imgs/)
 
 
 ## 🛠️ Construído com
