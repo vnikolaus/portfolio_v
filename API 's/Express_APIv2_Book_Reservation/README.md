@@ -40,7 +40,7 @@ Veja exemplos dos endpoints aqui: [ENDPOINTS](./imgs/)
 ✅ Criar nova reserva
 ✅ Excluir reserva existente
 ✅ Buscar todas as reservas
-✅ Gerar datas baseado na duração
+✅ Gerar datas baseado na duração da reserva
 ```
 
 ### ⌨️ Testes E2E
