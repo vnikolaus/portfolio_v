@@ -21,13 +21,15 @@ docker
 ### 🔧 Instalação
 
 ```
-Altere o objeto (datasource db) dentro do arquivo "schema.prisma" com os dados de conexão do seu banco de dados.
+Inicie um novo projeto NodeJS executando o comando: "npm init -y"
+
+Realize a instalação das dependencias utilizando: "npm ci"
 ```
 
 Após isso:
 
 ```
-Realize a instalação das dependencias utilizando: "npm ci"
+Altere o objeto (datasource db) dentro do arquivo "schema.prisma" com os dados de conexão do seu banco de dados.
 ```
 
 E então:
@@ -39,22 +41,16 @@ Crie as migrations do Prisma executando o comando "npx prisma migrate dev"
 
 ## ⚙️ Executando os testes
 
-Explicar como executar os testes automatizados para este sistema.
-
-### 🔩 Analise os testes de ponta a ponta
-
-Explique que eles verificam esses testes e porquê.
-
 ```
-Dar exemplos
+Adicione o seguinte script dentro de seu arquivo package.json: "test": "vitest"
+
+execute o seguinte comando: "npm t" no terminal
 ```
 
-### ⌨️ E testes de estilo de codificação
-
-Explique que eles verificam esses testes e porquê.
+### ⌨️ Testes E2E
 
 ```
-Dar exemplos
+Altere a variável "e2e_disabled" para false, e habilitará os testes E2E.
 ```
 
 ## 📦 Implantação
