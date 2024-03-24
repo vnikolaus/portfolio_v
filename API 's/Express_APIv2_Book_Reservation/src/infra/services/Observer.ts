@@ -27,8 +27,7 @@ export class ControllersObserver implements Observer {
         this._observers.splice(observer_index, 1)
     }
 
-    notify(): Promise<void> {
-        const app = new Server()
+    notify(app: Server): Promise<void> {
         const config = ConfigFactory(app)
         this._observers.forEach(async obs => {
             await obs.execute(config)
