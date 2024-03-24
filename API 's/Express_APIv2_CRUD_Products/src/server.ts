@@ -19,7 +19,7 @@ export class App {
     }
 
     connect() {
-        const PORT = process.env.PORT ?? 3001
+        const PORT = process.env.PORT ?? 3000
         this.#app.listen(+PORT, () => console.log(`API online: http://localhost:${PORT}`))
     }
 }
