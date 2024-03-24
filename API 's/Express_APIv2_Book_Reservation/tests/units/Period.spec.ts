@@ -1,6 +1,4 @@
-import { CalculateDates } from '../../src/app/useCases/CalculateDates'
-import { describe, it, expect } from 'vitest'
-import { formatDistance } from 'date-fns'
+import { describe, expect, it } from 'vitest'
 import { Period } from '../../src/domain/services/Period'
 
 describe('PERIOD - TEST', () => {
