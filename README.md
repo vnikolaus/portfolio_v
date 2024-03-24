@@ -34,7 +34,7 @@ Para uma visualização mais detalhada, acesse diretamente o repositório deseja
 
 ### 💻 Projetos NodeJS
 * [Blockchain](./NodeJS/NodeJS_Blockchain/)
-* [Criptografia](./NodeJS/NodeJS_Cryptography/)
+* [Cryptography](./NodeJS/NodeJS_Cryptography/)
 
 ### 💻 Projetos Websocket / Socketio
 * [Web_Chat](./WebSocket/WebSocket_Chat/)
