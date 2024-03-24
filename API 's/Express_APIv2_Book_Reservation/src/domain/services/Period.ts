@@ -10,7 +10,7 @@ export class Period {
         }
     }
 
-    static getDistance(start_date, end_date) {
+    static getDistance(start_date: string, end_date: string) {
         const distance = formatDistance(new Date(start_date), new Date(end_date))
         return parseInt(distance)
     }
