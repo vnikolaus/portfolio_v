@@ -27,7 +27,7 @@ Altere o objeto (datasource db) dentro do arquivo "schema.prisma" com os dados d
 Após isso:
 
 ```
-realize a instalação das dependencias utilizando: "npm ci"
+Realize a instalação das dependencias utilizando: "npm ci"
 ```
 
 Termine com um exemplo de como obter dados do sistema ou como usá-los para uma pequena demonstração.
