@@ -1,6 +1,6 @@
 # API - Book Reservation
 
-API responsável por realizar novas reservas de uso para livros virtuais.
+API responsável por realizar novas adições de livros em uma determinada biblioteca virtual, e também gerenciar suas reservas de uso.
 
 ### 📋 Dependências
 
