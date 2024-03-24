@@ -26,7 +26,7 @@ export class ControllersObserver implements Observer {
         this._observers.splice(observer_index, 1)
     }
 
-    async notify(): Promise<void> {
+    notify(): Promise<void> {
         const app = new Server()
         const book_repository = new BookRepositoryDatabase(prisma_client)
         const reservation_repository = new ReservationRepositoryDatabase(prisma_client)
