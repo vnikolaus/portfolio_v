@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <title>Consulta Ações</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js" integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 content">
+            <div class="row search-bar">
+                <div class="col-md-3" style="margin-top: 15px; text-align: center;">
+                    <label style="color: white; font-size: 18px;">Pesquise a Ação</label>
+                    <input type="text" class="form-control" placeholder="ex: VALE3" id="search_input" style="background-color: #1A1A2E; color: white;" maxlength="6">
+                    <br>
+                    <button type="button" id="search_button" style="font-size: 16px; background-color: #1A1A2E; color: white; border: 1px solid whitesmoke;" class="btn btn-md">Pesquisar</button>
+                    <button type="button" id="clear_search_button" style="font-size: 16px; background-color: #1A1A2E; color: white; border: 1px solid whitesmoke;" class="btn btn-md">Limpar</button>
+                </div>
+            </div>
+
+            <div class="row stock-information" hidden>
+                <div class="col-md-10" style="margin-top: 20px; border: 6px solid #0F3460; padding: 45px;">
+                    <div class="row">
+                        <div class="col-md-3" style="text-align: center;">
+                            <img src="https://s3-symbol-logo.tradingview.com/engie-brasilon-nm--big.svg" id="company_logo" width="260px" height="260px" style="border-radius: 5px; margin-left: 25px;"><br>
+                            <span id="company_name" style="color: white; font-size: 14px; margin-left: 25px;"></span>
+                        </div>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4" style="color: white;">
+                            <h5>Graham:&nbsp;&nbsp;&nbsp;<span class="badge badge-light" id="graham"></span></h5>
+                            <br>
+                            <h5>Bazin 10 anos:&nbsp;&nbsp;&nbsp;<span class="badge badge-light" id="bazin10"></span></h5>
+                            <br>
+                            <h5>Bazin 5 anos:&nbsp;&nbsp;&nbsp;<span class="badge badge-light" id="bazin5"></span></h5>
+                            <br>
+                            <h5>Bazin 3 anos:&nbsp;&nbsp;&nbsp;<span class="badge badge-light" id="bazin3"></span></h5>
+                            <br>
+                            <h5>Bazin 1 ano:&nbsp;&nbsp;&nbsp;<span class="badge badge-light" id="bazin1"></span></h5>
+                            <br>
+                        </div>
+                        <div class="col-md-4" style="color: white;">
+                            <h5>Preço atual:&nbsp;&nbsp;&nbsp;<span class="badge badge-light" id="actual_price" style="color: black;"></span>&nbsp;<span class="badge badge-success" id="variation" style="color: black;"></span></h5>
+                            <br>
+                            <h5>Preço Teto:&nbsp;&nbsp;&nbsp;<span class="badge badge-info" id="ceil_price" style="color: black;">R$ 40,50</span></h5>
+                            <br>
+                            <h5>Margem de Segurança:&nbsp;&nbsp;&nbsp;<span class="badge badge-success" id="security_margin" style="color: black;">5%</span></h5>
+                            <br>
+                            <h5>Tendência:&nbsp;&nbsp;&nbsp;<span class="badge" id="tendency"></span></h5>
+                        </div>
+                    </div>
+
+                    <div class="row graphics">
+                        <div class="col-md-6" style="margin-top: 50px;">
+                            <div class="btn-group me-2" role="group" aria-label="First group" style="margin-bottom: 10px;">
+                                <label style="font-size: 16px; color: white;">Período:&nbsp;&nbsp;</label>
+                                <button type="button" class="btn btn-sm years_price" value="-1" style="font-size: 14px; background-color: #1A1A2E; color: white; border: 1px solid whitesmoke;">1d</button>
+                                <button type="button" class="btn btn-sm years_price" value="0" style="font-size: 14px; background-color: #1A1A2E; color: white; border: 1px solid whitesmoke;">5d</button>
+                                <button type="button" class="btn btn-sm years_price" value="1" style="font-size: 14px; background-color: #1A1A2E; color: white; border: 1px solid whitesmoke;">1m</button>
+                                <button type="button" class="btn btn-sm years_price" value="2" style="font-size: 14px; background-color: #1A1A2E; color: white; border: 1px solid whitesmoke;">6m</button>
+                                <button type="button" class="btn btn-sm years_price" value="3" style="font-size: 14px; background-color: #1A1A2E; color: white; border: 1px solid whitesmoke;">1a</button>
+                                <button type="button" class="btn btn-sm years_price" value="4" style="font-size: 14px; background-color: #1A1A2E; color: white; border: 1px solid whitesmoke;">5a</button>
+                            </div>
+                            <div id="chart-wrapper">
+                                <canvas id="historicalPriceGraphic"></canvas>
+                            </div>
+                        </div>
+                        <div class="col-md-6" style="margin-top: 50px;">
+                            <div class="btn-group me-2" role="group" aria-label="First group" style="margin-bottom: 10px;">
+                                <label style="font-size: 16px; color: white;">Período:&nbsp;&nbsp;</label>
+                                <button type="button" class="btn btn-sm years_dividend" value="1"  style="font-size: 14px; background-color: #1A1A2E; color: white; border: 1px solid whitesmoke;">1a</button>
+                                <button type="button" class="btn btn-sm years_dividend" value="3"  style="font-size: 14px; background-color: #1A1A2E; color: white; border: 1px solid whitesmoke;">3a</button>
+                                <button type="button" class="btn btn-sm years_dividend" value="5"  style="font-size: 14px; background-color: #1A1A2E; color: white; border: 1px solid whitesmoke;">5a</button>
+                                <button type="button" class="btn btn-sm years_dividend" value="10"  style="font-size: 14px; background-color: #1A1A2E; color: white; border: 1px solid whitesmoke;">10a</button>
+                                <button type="button" class="btn btn-sm years_dividend" value="max" style="font-size: 14px; background-color: #1A1A2E; color: white; border: 1px solid whitesmoke;">MÁX</button>
+                            </div>
+                            <div id="chart-wrapper">
+                                <canvas id="dividendsGraphic"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="assets/prototypes.js"></script>
+    <script src="assets/utils.js"></script>
+    <script src="assets/graphics.js"></script>
+    <script src="assets/socket.js"></script>
+    <script src="assets/events.js"></script>
+  </body>
+</html>

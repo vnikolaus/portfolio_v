@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    background-color: #1A1A2E;
+    font-family: "Montserrat", sans-serif;
+    font-size: 22px;
+    max-width: 98vw;
+}
+
+.content {
+    background-color: #16213E;
+    min-height: 100vh;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+}
+
+.stock-information {
+    display: flex;
+    justify-content: center;
+}
+
+#search_button:hover, #clear_search_button:hover { 
+    background-color: rgba(75, 192, 192, 0.2) !important;
+    transition: 0.2s;
+}
+
+.years_price:hover, .years_dividend:hover {
+    background-color: rgba(79, 202, 202, 0.2) !important;
+    transition: 0.2s;
+}
