@@ -39,6 +39,7 @@ Para uma visualização mais detalhada, acesse diretamente o projeto desejado:
 ### 💻 Projetos Websocket / Socketio
 * [Web_Chat](./WebSocket/WebSocket_Chat/)
 * [Prize_Draw](./WebSocket/WebSocket_PrizeDraw/)
+* [Consult_Stocks](./WebSocket/WebSocket_ConsultStocks/)
 
 ### 💻 Projetos Fullstack
 * [Contact_Schedule](./Fullstack_projects/Express_Contact_Schedule/)
