@@ -23,8 +23,8 @@ Backend:
 ```
 1 - Cria um novo servidor HTTP;
 2 - Cria um novo servidor Socket IO;
-3 - Estabele uma conexão com o frontend e recebe seus eventos enviados;
-4 - Realiza comunicação com API's financeiras para obter os dados solicitados;
+3 - Estabelece uma conexão com o frontend e recebe os eventos transmitidos;
+4 - Realiza comunicação com API's financeiras para obter os dados necessários;
 5 - Emite novos eventos com as informações solicitadas pelo frontend;
 ```
 
