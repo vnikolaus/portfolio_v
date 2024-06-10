@@ -77,7 +77,7 @@ Fórmula Graham:
 VPA -> Valor patrominal da ação (patrimonio liquido / total de ações)
 LPA -> Lucro por ação (Lucro liquido / total de ações)
 
-raiz quadrada de 22.5 * ( VPA da ação * LPA da ação )
+CÁLCULO -> raiz quadrada de 22.5 * (VPA * LPA)
 ```
 
 Fórmula Bazin:
@@ -85,7 +85,7 @@ Fórmula Bazin:
 0.06 -> Yield de 6% ao ano
 
 
-Soma anual dos dividendos / 0.06
+CÁLCULO -> Soma anual dos dividendos / 0.06
 ```
 
 
