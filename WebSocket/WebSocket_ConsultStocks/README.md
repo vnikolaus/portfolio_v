@@ -74,6 +74,9 @@ Gráfico - Dividendos
 
 Fórmula Graham:
 ```
+VPA -> Valor patrominal da ação (patrimonio liquido / total de ações)
+LPA -> Lucro por ação (Lucro liquido / total de ações)
+
 raiz quadrada de 22.5 * ( VPA da ação * LPA da ação )
 ```
 
