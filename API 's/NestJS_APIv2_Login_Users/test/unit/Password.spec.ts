@@ -1,4 +1,4 @@
-import { Password } from '../../src/domain/Password'
+import { Password } from '../../src/domain/entities/Password'
 
 describe('Password - Test', () => {
     it('should hashed a new password', () => {

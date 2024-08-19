@@ -1,14 +1,14 @@
 import { Injectable } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
 import { Model } from 'mongoose'
-import { User } from '../../../domain/User'
+import { User } from '../../../domain/entities/User'
+import { UserSchema } from '../../database/schemas/User.schema'
 
 @Injectable()
 export class UserRepositoryService {
-    constructor(@InjectModel('User') private readonly userModel: Model<User>) {}
+    constructor(@InjectModel('User') private readonly userModel: Model<UserSchema>) {}
 
     async save(user: User) {
-        await this.userModel.collection.createIndex({ email: 1 }, { unique: true })
         const persistencyData = {
             ...user,
             email: user.email.content,
@@ -18,10 +18,10 @@ export class UserRepositoryService {
     }
 
     async find() {
-        return await this.userModel.find()
+        return this.userModel.find()
     }
 
     async findOne(email: string) {
-        return await this.userModel.findOne({ email })
+        return this.userModel.findOne({ email })
     }
 }

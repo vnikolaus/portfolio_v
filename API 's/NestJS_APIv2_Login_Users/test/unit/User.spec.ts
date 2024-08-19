@@ -1,4 +1,4 @@
-import { User } from '../../src/domain/User'
+import { User } from '../../src/domain/entities/User'
 
 describe('Email - Test', () => {
     it('should create a new user', async () => {

@@ -1,20 +1,12 @@
 import { Module } from '@nestjs/common'
-import { JwtModule } from '@nestjs/jwt'
-import { LoginService } from './login.service'
-import { LoginController } from './login.controller'
-import { UserModule } from '../User/user.module'
 import { config as dotenv } from 'dotenv'
+import { UserModule } from '../User/user.module'
+import { LoginController } from './login.controller'
+import { LoginService } from './login.service'
 dotenv()
 
 @Module({
-    imports: [
-        UserModule,
-        JwtModule.register({
-            global: true,
-            secret: process.env.TOKEN_SECRET,
-            signOptions: { expiresIn: process.env.TOKEN_EXPIRATION },
-        }),
-    ],
+    imports: [UserModule],
     controllers: [LoginController],
     providers: [LoginService],
     exports: [LoginService],

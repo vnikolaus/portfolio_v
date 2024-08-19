@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common'
-import { User, UserProps } from '../../../domain/User'
+import { User, UserProps } from '../../../domain/entities/User'
 import { UserRepositoryService } from '../../../infra/repositories/User/UserRepository.service'
 
 @Injectable()
@@ -16,6 +16,6 @@ export class UserService {
     }
 
     async findOne(email: string) {
-        return await this.repository.findOne(email)
+        return this.repository.findOne(email)
     }
 }

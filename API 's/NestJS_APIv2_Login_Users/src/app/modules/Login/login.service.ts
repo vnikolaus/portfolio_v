@@ -14,13 +14,11 @@ export class LoginService {
     async loginUser(input: Input) {
         const validUser = await this.userService.findOne(input.email)
         if (!validUser) throw new Error('Invalid user')
-
         const hashedPwd = String(validUser.pwd)
         const validPassword = await bcrypt.compare(input.pwd, hashedPwd)
         if (!validPassword) throw new Error('Invalid password')
-        
         const payload = { email: input.email, pwd: hashedPwd, date: +new Date() }
-        const token = await this.jwtService.sign(payload)
+        const token = await this.jwtService.sign(payload, { secret: process.env.TOKEN_SECRET })
         return token
     }
 }

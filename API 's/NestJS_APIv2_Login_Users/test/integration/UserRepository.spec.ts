@@ -1,6 +1,6 @@
 import { Test } from '@nestjs/testing'
 import { Model } from 'mongoose'
-import { User } from '../../src/domain/User'
+import { User } from '../../src/domain/entities/User'
 import { getModelToken } from '@nestjs/mongoose'
 import { UserRepositoryService } from '../../src/infra/repositories/User/UserRepository.service'
 import { userMock } from './mocks/UserMock'

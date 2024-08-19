@@ -1,7 +1,7 @@
 describe('Create User Request - Test', () => {
     it.skip('should create a new user', async () => {
         const url = 'http://localhost:3000/api/v1/user/create'
-        const input = { email: 'fake@email.com', pwd: 'fakepwd' }
+        const input = { email: 'jest@jest.com', pwd: 'fakejest' }
         const response = await fetch(url, {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },

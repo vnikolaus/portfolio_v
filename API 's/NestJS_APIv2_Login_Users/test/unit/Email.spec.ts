@@ -1,4 +1,4 @@
-import { Email } from '../../src/domain/Email'
+import { Email } from '../../src/domain/entities/Email'
 
 describe('Email - Test', () => {
     it('should validate a correct email', () => {
@@ -7,7 +7,7 @@ describe('Email - Test', () => {
         expect(email.content).toBeDefined()
     })
 
-    it('should throw a error if invalid email', () => {
+    it('should throw a error if email is invalid', () => {
         const invalidEmail1 = 'fake@email.c'
         const invalidEmail2 = 'fake.io'
         expect(() => new Email(invalidEmail1)).toThrowError('Invalid e-mail')
